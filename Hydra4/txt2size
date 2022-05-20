@@ -1,0 +1,7 @@
+cat HYDRA/Debug/bin/*.txt | grep ^0 | grep -v ^00000000 > tmp
+cat tmp | awk -f ~/bin/size.awk > tmp1
+cat tmp1 | sort -r > size.num
+rm tmp tmp1
+cat size.num | awk '{s+=$1}END{print s}' >> size.num
+cat size.num | sort +1 > size.name
+vi size.name

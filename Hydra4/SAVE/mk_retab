@@ -1,0 +1,24 @@
+./SAVE/retab_all
+
+cd  src
+../SAVE/retab_all 
+
+cd ../inc/
+../SAVE/retab_all 
+
+cd ../common/inc/
+../../SAVE/retab_all 
+
+cd ../src
+../../SAVE/retab_all 
+
+cd ../lcd/
+../../SAVE/retab_all 
+
+cd controllers/
+../../../SAVE/retab_all 
+
+cd ../fonts/
+../../../SAVE/retab_all 
+
+cd ../../..

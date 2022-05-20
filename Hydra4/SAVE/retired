@@ -1,0 +1,138 @@
+    // MCODE M101 ["T" toolSelector] ["S" feed rate #/min] ["E" continuous(!=0)] ["P"]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M102 ["T" toolSelector] ["S" feed rate #/min] ["E" continuous(!=0)]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M108 ["T" toolSelector] <"S" rate #/sec>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M211 <S min_pulse_rate>
+	// MCODE RETIRED
+	ReportRetiredMcode("now self tuning");
+    // MCODE M212 [S maxPulseRate] [R maxRasterPulseRate]
+	// MCODE RETIRED
+	ReportRetiredMcode("now self tuning");
+    // MCODE M219 <"S" draftModeTolerance>
+	// MCODE RETIRED
+	ReportRetiredMcode("unsupported");
+    // MCODE M220 <T deviceForCanStep> ["X,Y,Z,A,B,C" <0|1>]
+	// MCODE RETIRED
+	ReportRetiredMcode("Use M229 to enable");
+	// MCODE M228
+	// MCODE RETIRED
+	ReportRetiredMcode("use M229 Sxxx");
+    // MCODE M236  <"T" toolSelector> <"S" deviceType> <"I" deviceRevision> <"P" password>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M680 ["X" Zofs_1] ["Y" Zofs_2] ["Z" Zofs_3] ["W" Zofs_4] ["S" Zofs_5]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M681
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M682
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M710 ["T" toolSelector] <"S" 0|1>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M711 ["T" toolSelector] <"S" 0|1>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M713 <"T" toolSelector>
+	// MCODE RETIRED
+	ReportRetiredMcode("use Tx command");
+    // MCODE M714 <"T" toolSelector> <"S" alias>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M715 ["T" toolSelector] ["P" displayPage] ["S" dutyCycle] ["E" errorDisplayCount]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M724 ["T" toolSelector] ["S" rate qty/sec] ["E" qty] ["P" store only]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M727 ["T" toolSelector] <"S" override value>  <"P" override mask>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+	// MCODE M730 ["T" toolSelector] <"S" temp>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+	// MCODE M731 ["T" toolSelector] <"S" temp>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+	// MCODE M733 ["T" toolSelector] <"S" tempDelta>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+	// MCODE M734 ["T" toolSelector] <"S" rate>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M735 ["S" fill byte]
+    // MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M736 ["S" fill byte]
+    // MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M737 ["T" toolSelector] <<"P" physicalPage> | <"I" indirectPage>>
+    // MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M738 ["T" toolSelector] <<"P" physicalPage> | <"I" indirectPage>>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M739
+	// MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M740 ["T" toolSelector] <<"P" physicalPage> | <"I" indirectPage>> ["S" size in bytes]
+	// MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M750 ["T" toolSelector]
+	// MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M751 ["T" toolSelector]
+    // MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M752  <"T" toolSelector> <"S" hwType> <"P" password>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M753 <"S" hwRev> <"P" password>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M754 <"S" key> <"P" password>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M755 ["T" toolSelector] <"S" duty cycle>
+	// MCODE RETIRED
+	ReportRetiredMcode("Use M242 Tx I1 Sx");
+	// MCODE M759 ["T" toolSelector] ["S" rate]
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+	// MCODE RETIRED
+    // MCODE M760
+	ReportRetiredMcode("");
+    // MCODE M764 - just a shell. does nothing
+	// MCODE RETIRED
+	 ReportRetiredMcode("");
+    // MCODE M763 - just a shell. does nothing
+	// MCODE RETIRED
+	 ReportRetiredMcode("");
+    // MCODE M766  jump to system bootloader
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M768 <"P" lineNum> <;intel hex format line>
+	// MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M769
+	// MCODE RETIRED
+    ReportRetiredMcode("");
+    // MCODE M770
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M771 ["S" scale] ["O" offset] ["P" max]
+	// MCODE RETIRED
+	ReportRetiredMcode("see M622");
+    // MCODE M781  <"T" toolSelector> <"D" hwType> <"O" hwRev> <"P" password>
+	// MCODE RETIRED
+	ReportRetiredMcode("");
+    // MCODE M798 
+	// MCODE RETIRED
+	ReportRetiredMcode("");

@@ -1,0 +1,12 @@
+if import new libraries, 
+
+make sure clocks are set to match hardware:
+
+cmsis_boot/system_stm42f4xx.c
+
+#define PLL_M      8
+#define PLL_N      336
+
+cmsis_boot/stm42f4xx.h
+
+#define HSE_VALUE    ((uint32_t)8000000)`

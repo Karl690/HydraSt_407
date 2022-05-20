@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 2.0.2" name="Project">
+  <Target name="EngineSR_30M" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="345" chipName="STM32F407ZG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="FPU" value="2"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="_ASSEMBLY_"/>
+          <Define name="__FPU_USED"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="STM32F407ZG"/>
+          <Define name="STM32F4XX"/>
+          <Define name="${target.name}"/>
+          <Define name="COMPILE_FOR_SYSTEM"/>
+          <Define name="USE_HYREL_IO"/>
+          <Define name="STM32F4XX_HYREL"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="..\..\..\obj\master4.o; "/>
+        <Option name="nostartfiles" value="1"/>
+        <LinkedLibraries>
+          <Libset dir="C:\Program Files (x86)\Gnu Tools Arm Embedded\6 2017-q1-update\lib\gcc\arm-none-eabi\6.3.1\thumb\v7e-m\fpv4-sp\hard" libs="m"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Project"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="1" value="&quot;${project.path}/INSTALL.BAT ${project.name} ${target.name} ${project.path}&quot;"/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="JTAG"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashtool" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRam" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashscript" value=""/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Target name="EngineHR_Hydra" isCurrent="0">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="345" chipName="STM32F407ZG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="FPU" value="2"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="_ASSEMBLY_"/>
+          <Define name="__FPU_USED"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="STM32F407ZG"/>
+          <Define name="STM32F4XX"/>
+          <Define name="${target.name}"/>
+          <Define name="COMPILE_FOR_SYSTEM"/>
+          <Define name="USE_HYDRA_IO"/>
+          <Define name="STM32F4XX_HYREL"/>
+          <Define name="ADD_ON_SPI_DISPLAY"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <Option name="Library" value="Use base C Library"/>
+        <Option name="UserEditLinker" value="..\..\..\obj\master4.o;"/>
+        <Option name="nostartfiles" value="1"/>
+        <LinkedLibraries>
+          <Libset dir="C:\Program Files (x86)\Gnu Tools Arm Embedded\6 2017-q1-update\lib\gcc\arm-none-eabi\6.3.1\thumb\v7e-m\fpv4-sp\hard" libs="m"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Project"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="1" value="&quot;${project.path}/INSTALL.BAT ${project.name} ${target.name} ${project.path}&quot;"/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashtool" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRam" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashscript" value=""/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Target name="HYDRA_DIAGS" isCurrent="0">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="345" chipName="STM32F407ZG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="FPU" value="2"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="_ASSEMBLY_"/>
+          <Define name="__FPU_USED"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="STM32F407ZG"/>
+          <Define name="STM32F4XX"/>
+          <Define name="${target.name}"/>
+          <Define name="COMPILE_FOR_SYSTEM"/>
+          <Define name="USE_HYDRA_IO"/>
+          <Define name="STM32F4XX_HYREL"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="..\..\..\obj\master4.o; "/>
+        <Option name="nostartfiles" value="1"/>
+        <LinkedLibraries>
+          <Libset dir="C:\Program Files (x86)\Gnu Tools Arm Embedded\6 2017-q1-update\lib\gcc\arm-none-eabi\6.3.1\thumb\v7e-m\fpv4-sp\hard" libs="m"/>
+        </LinkedLibraries>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Project"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="1" value="&quot;${project.path}/INSTALL.BAT ${project.name} ${target.name} ${project.path}&quot;"/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="JTAG"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashtool" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRam" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jflashscript" value=""/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="cmsis_lib/src/stm32f4xx_spi.c" path="cmsis_lib/src/stm32f4xx_spi.c" type="1"/>
+    <File name="usb_lib/src/usbd_core.c" path="usb_lib/src/usbd_core.c" type="1"/>
+    <File name="inc/pinout.h" path="inc/pinout.h" type="1"/>
+    <File name="common/lcd/fonts/font20.c" path="common/lcd/fonts/font20.c" type="1"/>
+    <File name="common/lcd/lcd.c" path="common/lcd/lcd.c" type="1"/>
+    <File name="usb_lib/src/usbd_usr.c" path="usb_lib/src/usbd_usr.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_flash.c" path="cmsis_lib/src/stm32f4xx_flash.c" type="1"/>
+    <File name="src" path="" type="2"/>
+    <File name="usb_lib/inc/usbd_req.h" path="usb_lib/inc/usbd_req.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
+    <File name="common/src/util.c" path="common/src/util.c" type="1"/>
+    <File name="inc/Serial.h" path="inc/Serial.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_fsmc.h" path="cmsis_lib/inc/stm32f4xx_fsmc.h" type="1"/>
+    <File name="src/cruftyCode.c" path="src/cruftyCode.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_syscfg.c" path="cmsis_lib/src/stm32f4xx_syscfg.c" type="1"/>
+    <File name="common/lcd" path="" type="2"/>
+    <File name="usb_lib/inc/usb_conf.h" path="usb_lib/inc/usb_conf.h" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="usb_lib" path="" type="2"/>
+    <File name="common/lcd/fonts" path="" type="2"/>
+    <File name="common/inc/hyrel_can.h" path="common/inc/hyrel_can.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_it.h" path="cmsis_lib/inc/stm32f4xx_it.h" type="1"/>
+    <File name="common/inc" path="" type="2"/>
+    <File name="inc/bootloader.h" path="inc/bootloader.h" type="1"/>
+    <File name="common/src/pins.c" path="common/src/pins.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_misc.c" path="cmsis_lib/src/stm32f4xx_misc.c" type="1"/>
+    <File name="inc/display.h" path="inc/display.h" type="1"/>
+    <File name="src/Serial.c" path="src/Serial.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_usart.h" path="cmsis_lib/inc/stm32f4xx_usart.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_pwr.c" path="cmsis_lib/src/stm32f4xx_pwr.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_rcc.c" path="cmsis_lib/src/stm32f4xx_rcc.c" type="1"/>
+    <File name="usb_lib/inc/usbd_cdc_core.h" path="usb_lib/inc/usbd_cdc_core.h" type="1"/>
+    <File name="usb_lib/inc/usb_defines.h" path="usb_lib/inc/usb_defines.h" type="1"/>
+    <File name="src/diags.c" path="src/diags.c" type="1"/>
+    <File name="cmsis_lib/src" path="" type="2"/>
+    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_dma.c" path="cmsis_lib/src/stm32f4xx_dma.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_can.c" path="cmsis_lib/src/stm32f4xx_can.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_fsmc.c" path="cmsis_lib/src/stm32f4xx_fsmc.c" type="1"/>
+    <File name="common" path="" type="2"/>
+    <File name="usb_lib/src/usbd_cdc_vcp.c" path="usb_lib/src/usbd_cdc_vcp.c" type="1"/>
+    <File name="usb_lib/inc" path="" type="2"/>
+    <File name="common/lcd/fonts/font24.c" path="common/lcd/fonts/font24.c" type="1"/>
+    <File name="inc/gpio.h" path="inc/gpio.h" type="1"/>
+    <File name="common/lcd/lcd.h" path="common/lcd/lcd.h" type="1"/>
+    <File name="src/pinInit.c" path="src/pinInit.c" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_dac.h" path="cmsis_lib/inc/stm32f4xx_dac.h" type="1"/>
+    <File name="usb_lib/inc/usb_regs.h" path="usb_lib/inc/usb_regs.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_rtc.c" path="cmsis_lib/src/stm32f4xx_rtc.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_it.c" path="cmsis_lib/src/stm32f4xx_it.c" type="1"/>
+    <File name="usb_lib/inc/usbd_usr.h" path="usb_lib/inc/usbd_usr.h" type="1"/>
+    <File name="common/lcd/fonts/font12.c" path="common/lcd/fonts/font12.c" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="usb_lib/src/usb_dcd_int.c" path="usb_lib/src/usb_dcd_int.c" type="1"/>
+    <File name="usb_lib/src/usb_bsp.c" path="usb_lib/src/usb_bsp.c" type="1"/>
+    <File name="cmsis_lib" path="" type="2"/>
+    <File name="src/headSetup.c" path="src/headSetup.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_rcc.h" path="cmsis_lib/inc/stm32f4xx_rcc.h" type="1"/>
+    <File name="usb_lib/src/usbd_ioreq.c" path="usb_lib/src/usbd_ioreq.c" type="1"/>
+    <File name="common/src/hyrel_can.c" path="common/src/hyrel_can.c" type="1"/>
+    <File name="common/lcd/controllers/ili9341.c" path="common/lcd/controllers/ili9341.c" type="1"/>
+    <File name="usb_lib/src/usb_core.c" path="usb_lib/src/usb_core.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_adc.h" path="cmsis_lib/inc/stm32f4xx_adc.h" type="1"/>
+    <File name="usb_lib/inc/usbd_def.h" path="usb_lib/inc/usbd_def.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_tim.h" path="cmsis_lib/inc/stm32f4xx_tim.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_adc.c" path="cmsis_lib/src/stm32f4xx_adc.c" type="1"/>
+    <File name="usb_lib/inc/usbd_ioreq.h" path="usb_lib/inc/usbd_ioreq.h" type="1"/>
+    <File name="inc/GCode.h" path="inc/GCode.h" type="1"/>
+    <File name="inc/HardwareInit.h" path="inc/HardwareInit.h" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="common/lcd/fonts/font22.c" path="common/lcd/fonts/font22.c" type="1"/>
+    <File name="usb_lib/src/usbd_cdc_core.c" path="usb_lib/src/usbd_cdc_core.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_misc.h" path="cmsis_lib/inc/stm32f4xx_misc.h" type="1"/>
+    <File name="common/lcd/fonts/fonts.h" path="common/lcd/fonts/fonts.h" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="usb_lib/inc/usb_dcd.h" path="usb_lib/inc/usb_dcd.h" type="1"/>
+    <File name="usb_lib/inc/usbd_cdc_vcp.h" path="usb_lib/inc/usbd_cdc_vcp.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_i2c.h" path="cmsis_lib/inc/stm32f4xx_i2c.h" type="1"/>
+    <File name="inc/includes.h" path="inc/includes.h" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="common/lcd/controllers/st7735.c" path="common/lcd/controllers/st7735.c" type="1"/>
+    <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
+    <File name="src/display.c" path="src/display.c" type="1"/>
+    <File name="inc/mailbox.h" path="inc/mailbox.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_tim.c" path="cmsis_lib/src/stm32f4xx_tim.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_exti.c" path="cmsis_lib/src/stm32f4xx_exti.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_iwdg.c" path="cmsis_lib/src/stm32f4xx_iwdg.c" type="1"/>
+    <File name="common/inc/gui.h" path="common/inc/gui.h" type="1"/>
+    <File name="usb_lib/inc/usb_bsp.h" path="usb_lib/inc/usb_bsp.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_pwr.h" path="cmsis_lib/inc/stm32f4xx_pwr.h" type="1"/>
+    <File name="cmsis_lib/inc" path="" type="2"/>
+    <File name="common/inc/pins_stm32f10x.h" path="common/inc/pins_stm32f10x.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_spi.h" path="cmsis_lib/inc/stm32f4xx_spi.h" type="1"/>
+    <File name="usb_lib/inc/usbd_conf.h" path="usb_lib/inc/usbd_conf.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_dac.c" path="cmsis_lib/src/stm32f4xx_dac.c" type="1"/>
+    <File name="common/lcd/hyrel3d_logo_128x128.h" path="common/lcd/hyrel3d_logo_128x128.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_gpio.h" path="cmsis_lib/inc/stm32f4xx_gpio.h" type="1"/>
+    <File name="common/inc/hyrel.h" path="common/inc/hyrel.h" type="1"/>
+    <File name="usb_lib/inc/usb_core.h" path="usb_lib/inc/usb_core.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_i2c.c" path="cmsis_lib/src/stm32f4xx_i2c.c" type="1"/>
+    <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
+    <File name="common/src" path="" type="2"/>
+    <File name="cmsis_lib/inc/stm32f4xx_exti.h" path="cmsis_lib/inc/stm32f4xx_exti.h" type="1"/>
+    <File name="common/lcd/controllers/ssd1306.c" path="common/lcd/controllers/ssd1306.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_rtc.h" path="cmsis_lib/inc/stm32f4xx_rtc.h" type="1"/>
+    <File name="common/inc/util.h" path="common/inc/util.h" type="1"/>
+    <File name="common/lcd/fonts/font8.c" path="common/lcd/fonts/font8.c" type="1"/>
+    <File name="src/GCode.c" path="src/GCode.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_gpio.c" path="cmsis_lib/src/stm32f4xx_gpio.c" type="1"/>
+    <File name="common/lcd/hyrel3d_logo_320x240.h" path="common/lcd/hyrel3d_logo_320x240.h" type="1"/>
+    <File name="usb_lib/src/usbd_req.c" path="usb_lib/src/usbd_req.c" type="1"/>
+    <File name="usb_lib/src/usbd_desc.c" path="usb_lib/src/usbd_desc.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_flash.h" path="cmsis_lib/inc/stm32f4xx_flash.h" type="1"/>
+    <File name="common/src/gui.c" path="common/src/gui.c" type="1"/>
+    <File name="inc/MotorDriver.h" path="inc/MotorDriver.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_iwdg.h" path="cmsis_lib/inc/stm32f4xx_iwdg.h" type="1"/>
+    <File name="src/mailbox.c" path="src/mailbox.c" type="1"/>
+    <File name="inc" path="" type="2"/>
+    <File name="src/HardwareInit.c" path="src/HardwareInit.c" type="1"/>
+    <File name="usb_lib/src/usb_dcd.c" path="usb_lib/src/usb_dcd.c" type="1"/>
+    <File name="inc/Hydra_can.h" path="inc/Hydra_can.h" type="1"/>
+    <File name="common/inc/pins_stm32f4xx.h" path="common/inc/pins_stm32f4xx.h" type="1"/>
+    <File name="inc/headSetup.h" path="inc/headSetup.h" type="1"/>
+    <File name="common/lcd/controllers" path="" type="2"/>
+    <File name="cmsis_lib/inc/stm32f4xx_dma.h" path="cmsis_lib/inc/stm32f4xx_dma.h" type="1"/>
+    <File name="src/Hydra_can.c" path="src/Hydra_can.c" type="1"/>
+    <File name="usb_lib/inc/usb_dcd_int.h" path="usb_lib/inc/usb_dcd_int.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_sdio.c" path="cmsis_lib/src/stm32f4xx_sdio.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_usart.c" path="cmsis_lib/src/stm32f4xx_usart.c" type="1"/>
+    <File name="inc/main.h" path="inc/main.h" type="1"/>
+    <File name="src/MCode.c" path="src/MCode.c" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_syscfg.h" path="cmsis_lib/inc/stm32f4xx_syscfg.h" type="1"/>
+    <File name="src/MotorDrivers.c" path="src/MotorDrivers.c" type="1"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="src/bootloader.c" path="src/bootloader.c" type="1"/>
+    <File name="inc/diags.h" path="inc/diags.h" type="1"/>
+    <File name="usb_lib/src" path="" type="2"/>
+    <File name="cmsis_lib/inc/stm32f4xx_sdio.h" path="cmsis_lib/inc/stm32f4xx_sdio.h" type="1"/>
+    <File name="cmsis_lib/inc/stm32f4xx_can.h" path="cmsis_lib/inc/stm32f4xx_can.h" type="1"/>
+    <File name="usb_lib/inc/usbd_core.h" path="usb_lib/inc/usbd_core.h" type="1"/>
+    <File name="common/inc/pins.h" path="common/inc/pins.h" type="1"/>
+    <File name="common/lcd/fonts/font16.c" path="common/lcd/fonts/font16.c" type="1"/>
+    <File name="usb_lib/inc/usbd_desc.h" path="usb_lib/inc/usbd_desc.h" type="1"/>
+  </Files>
+</Project>
