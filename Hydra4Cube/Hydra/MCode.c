@@ -36,7 +36,6 @@
 #include "Serial.h"
 #include "mailbox.h"
 #include "Hydra_can.h"
-#include "gpio.h"
 #include "MotorDriver.h"
 #include "HardwareInit.h"
 #include "bootloader.h"  //NUKE? GB XXX gregkarl -- can we strip out the HH bootloader code?

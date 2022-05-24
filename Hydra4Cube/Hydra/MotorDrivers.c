@@ -16,7 +16,6 @@
 #include "main.h"
 #include "mailbox.h"
 #include "MotorDriver.h"
-#include "gpio.h"
 #include "Serial.h"
 #include "Hydra_can.h"
 #include "GCode.h"

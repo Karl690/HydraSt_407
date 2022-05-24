@@ -21,7 +21,6 @@
 #include "Hydra_can.h"
 #include "Serial.h"
 #include "mailbox.h"
-#include "gpio.h"
 #include "headSetup.h"
 #include "MotorDriver.h"
 #include "GCode.h"

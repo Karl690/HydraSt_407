@@ -16,7 +16,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
-#include "gpio.h"
 #include "mailbox.h"
 #include "HardwareInit.h" // (get our own global defines and typedefs)
 #include "serial.h"

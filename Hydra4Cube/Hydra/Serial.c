@@ -16,7 +16,7 @@
 #include "Serial.h" // (get our own global defines and typedefs)
 #include "GCode.h"
 #include "MotorDriver.h"
-#include "gpio.h"
+
 
 #include "mailbox.h"
 #include "usart_4xx.h"

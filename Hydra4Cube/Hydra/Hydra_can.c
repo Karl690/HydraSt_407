@@ -16,7 +16,6 @@
 #include "main.h"
 #include "Serial.h"
 #include "Hydra_can.h"
-#include "gpio.h"
 #include "bootloader.h"  //NUKE GB XXX gregkarl -- can we strip out the HH bootloader code?
 #include "GCode.h"
 #include "MotorDriver.h"

@@ -22,7 +22,6 @@
 // add includes here
 #include "main.h"
 #include "old_main.h"
-#include "gpio.h"
 #include "Serial.h"
 #include "Hardwareinit.h"
 #include "mailbox.h"            // outboxStructure
