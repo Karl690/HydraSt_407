@@ -33,7 +33,11 @@ extern "C" {
 #include "hyrel_stm32f4xx.h"
 #include "hyrel.h"
 #include "old_main.h"
-#include "pinout.h"
+#ifdef PINOUT_10207
+#include <pinout_102207.h>
+#elif defined (PINOUT_100094)
+#include <pinout_100094.h>
+#endif
 #include "pins.h"
 #include "hyrel_can.h"
 #include "old_main.h"

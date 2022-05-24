@@ -20,8 +20,8 @@
 
 #include "mailbox.h"
 #include "usart_4xx.h"
-//extern uint8_t USB_Rx_Buffer[];
-extern uint8_t UserRxBufferFS[];
+uint8_t USB_Rx_Buffer[64] = {0};
+
 extern void releaseUsbBuffer(void);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -194,6 +194,17 @@ void sendNchars(char *stringToSend, uint16_t numChars)
 	}
 }
 
+
+void USBD_CDC_ReceivePacketCallback(uint8_t*Buf, uint32_t *Len)
+{
+	uint16_t len = Len;
+	int Index=0;
+	while(Index<len)
+	{
+		ProcessRawRxChar(Buf[Index]);
+		Index++;
+	}
+}
 void sendMotionInfo(char label, char arg1, float arg2, float arg3, char *s)
 {
 #ifdef ALLOW_NATIVE_LIGHTBURN
@@ -1186,7 +1197,7 @@ void ProcessRawRxBuffer(void)
 			int charsProcessed = 0;
 			for (i=0; i<charsToProcess; i++)
 			{
-				rawChar = *(UserRxBufferFS + rawUsbRxIndexOut);
+				rawChar = *(USB_Rx_Buffer + rawUsbRxIndexOut);
 
 				if ((rawChar == PING_CHAR) || (rawChar == ABORT_CHAR))
 				{	// change master and nuke serial buffer
@@ -1223,7 +1234,7 @@ void ProcessRawRxBuffer(void)
 #endif
 		for (i=0; i<charsToProcess; i++)  // limit number of chars to process to avoid hogging too much time
 		{
-			rawChar = UserRxBufferFS[rawUsbRxIndexOut++];
+			rawChar = USB_Rx_Buffer[rawUsbRxIndexOut++];
 			rawUsbRxIndexOut %= SERIAL_RX_RAW_USB_BUFFER_SIZE; //wrap index
 			protectedDecrement(&rawUsbRxCharsInBuf);
 			if ((rawChar == PING_CHAR) || (rawChar == ABORT_CHAR))

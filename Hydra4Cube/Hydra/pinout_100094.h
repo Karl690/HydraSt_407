@@ -37,7 +37,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  pinout specific global defines and macros needed by other modules
 ////////////////////////////////////////////////////////////////////////////////
-//#include "main.h"
+#ifdef PINOUT_100094
 
 #ifdef USE_HYDRA_IO
 
@@ -273,30 +273,30 @@ CO2_LASER_USES HSS4
 #endif  // !USE_6_TO_ONE_SELECT
 
 #define GB_DEBUG_PIN1           (OUTPUT_PP_50MHZ      | PIN_PORT_F | PIN_NUM_07 | PIN_INIT_LOW)  // sel0
-#define GB_DEBUG_PIN1_SET       (GPIOF->BSRRL = HYREL_GPIO_Pin_7)
-#define GB_DEBUG_PIN1_CLEAR     (GPIOF->BSRRH = HYREL_GPIO_Pin_7)
-#define GB_DEBUG_PIN1_READ      (GPIOF->IDR & HYREL_GPIO_Pin_7)
+#define GB_DEBUG_PIN1_SET       (GPIOF->BSRRL = GPIO_Pin_7)
+#define GB_DEBUG_PIN1_CLEAR     (GPIOF->BSRRH = GPIO_Pin_7)
+#define GB_DEBUG_PIN1_READ      (GPIOF->IDR & GPIO_Pin_7)
 #define GB_DEBUG_PIN1_TOGGLE    {if (GB_DEBUG_PIN1_READ) {GB_DEBUG_PIN1_CLEAR;} else {GB_DEBUG_PIN1_SET;}}
 
 #define GB_DEBUG_PIN2           (OUTPUT_PP_50MHZ      | PIN_PORT_F | PIN_NUM_08 | PIN_INIT_LOW)
-#define GB_DEBUG_PIN2_SET       GPIOF->BSRRL = HYREL_GPIO_Pin_8
-#define GB_DEBUG_PIN2_CLEAR     GPIOF->BSRRH = HYREL_GPIO_Pin_8
+#define GB_DEBUG_PIN2_SET       GPIOF->BSRRL = GPIO_Pin_8
+#define GB_DEBUG_PIN2_CLEAR     GPIOF->BSRRH = GPIO_Pin_8
 
 #define GB_DEBUG_PIN3           (OUTPUT_PP_50MHZ      | PIN_PORT_H | PIN_NUM_08 | PIN_INIT_LOW)
-#define GB_DEBUG_PIN3_SET       GPIOH->BSRRL = HYREL_GPIO_Pin_8
-#define GB_DEBUG_PIN3_CLEAR     GPIOH->BSRRH = HYREL_GPIO_Pin_8
+#define GB_DEBUG_PIN3_SET       GPIOH->BSRRL = GPIO_Pin_8
+#define GB_DEBUG_PIN3_CLEAR     GPIOH->BSRRH = GPIO_Pin_8
 
 #define GB_DEBUG_PIN4           (OUTPUT_PP_50MHZ      | PIN_PORT_H | PIN_NUM_10 | PIN_INIT_LOW)
-#define GB_DEBUG_PIN4_SET       GPIOH->BSRRL = HYREL_GPIO_Pin_10
-#define GB_DEBUG_PIN4_CLEAR     GPIOH->BSRRH = HYREL_GPIO_Pin_10
+#define GB_DEBUG_PIN4_SET       GPIOH->BSRRL = GPIO_Pin_10
+#define GB_DEBUG_PIN4_CLEAR     GPIOH->BSRRH = GPIO_Pin_10
 
 #define GB_DEBUG_PIN5           (OUTPUT_PP_50MHZ      | PIN_PORT_H | PIN_NUM_09 | PIN_INIT_LOW)
-#define GB_DEBUG_PIN5_SET       GPIOH->BSRRL = HYREL_GPIO_Pin_9
-#define GB_DEBUG_PIN5_CLEAR     GPIOH->BSRRH = HYREL_GPIO_Pin_9
+#define GB_DEBUG_PIN5_SET       GPIOH->BSRRL = GPIO_Pin_9
+#define GB_DEBUG_PIN5_CLEAR     GPIOH->BSRRH = GPIO_Pin_9
 
 #define GB_DEBUG_PIN6           (OUTPUT_PP_50MHZ      | PIN_PORT_H | PIN_NUM_11 | PIN_INIT_LOW) // sel5
-#define GB_DEBUG_PIN6_SET       GPIOH->BSRRL = HYREL_GPIO_Pin_11
-#define GB_DEBUG_PIN6_CLEAR     GPIOH->BSRRH = HYREL_GPIO_Pin_11
+#define GB_DEBUG_PIN6_SET       GPIOH->BSRRL = GPIO_Pin_11
+#define GB_DEBUG_PIN6_CLEAR     GPIOH->BSRRH = GPIO_Pin_11
 
 
 #else //!USE_PANEL_6TO1_IO_FOR_DEBUG_PINS
@@ -334,16 +334,16 @@ CO2_LASER_USES HSS4
 #endif  // !USE_AB_ENCODER
 
 #define GB_DEBUG_PIN7           (OUTPUT_PP_50MHZ      | PIN_PORT_A | PIN_NUM_00 | PIN_INIT_LOW) // a
-#define GB_DEBUG_PIN7_SET       GPIOA->BSRRL = HYREL_GPIO_Pin_0
-#define GB_DEBUG_PIN7_CLEAR     GPIOA->BSRRH = HYREL_GPIO_Pin_0
+#define GB_DEBUG_PIN7_SET       GPIOA->BSRRL = GPIO_Pin_0
+#define GB_DEBUG_PIN7_CLEAR     GPIOA->BSRRH = GPIO_Pin_0
 
 #define GB_DEBUG_PIN8           (OUTPUT_PP_50MHZ      | PIN_PORT_A | PIN_NUM_01 | PIN_INIT_LOW) // b
-#define GB_DEBUG_PIN8_SET       GPIOA->BSRRL = HYREL_GPIO_Pin_1
-#define GB_DEBUG_PIN8_CLEAR     GPIOA->BSRRH = HYREL_GPIO_Pin_1
+#define GB_DEBUG_PIN8_SET       GPIOA->BSRRL = GPIO_Pin_1
+#define GB_DEBUG_PIN8_CLEAR     GPIOA->BSRRH = GPIO_Pin_1
 
 #define GB_DEBUG_PIN9           (OUTPUT_PP_50MHZ      | PIN_PORT_A | PIN_NUM_04 | PIN_INIT_LOW) // s
-#define GB_DEBUG_PIN9_SET       GPIOA->BSRRL = HYREL_GPIO_Pin_4
-#define GB_DEBUG_PIN9_CLEAR     GPIOA->BSRRH = HYREL_GPIO_Pin_4
+#define GB_DEBUG_PIN9_SET       GPIOA->BSRRL = GPIO_Pin_4
+#define GB_DEBUG_PIN9_CLEAR     GPIOA->BSRRH = GPIO_Pin_4
 
 
 #else //!USE_PANEL_ABSEL_IO_FOR_DEBUG_PINS
@@ -362,112 +362,47 @@ CO2_LASER_USES HSS4
 ////////////////////////////////////////////////////////////////////////////////
 
 #ifdef USE_HYREL_IO
+#define W_EN                (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_12)
+#define W_DIR               (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_11)
+#define W_STEP              (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_03)
+#define LATHE_STEP          (PIN_AF_TIM9       | PIN_OTYPE_PUSHPULL | PIN_OSPEED_100MHZ | PIN_PORT_A | PIN_NUM_03 | PIN_INIT_HIGH)
+#define W_HSS1              (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_01)
+#define W_HSS2              (OUTPUT_PP_50MHZ  | PIN_PORT_B | PIN_NUM_07)
+#define W_HOME              (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_14)
+#define W_STALL             (INPUT_PULLUP     | PIN_PORT_E | PIN_NUM_00)
 
-//we are making the ESR firmware run on the Hydra pcb
-/*hydra   ESR
- * Dir	>>Dir
- * Step	>>step
- * Home	>>home
- * L1	>>EN
- * Fault>>Stall
- */
+#define X_EN                (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_14)
+#define X_DIR               (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_15)
+#define X_STEP              (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_02)
+#define X_HSS1              (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_02) // goes to "LED" input on switch panel
+#define X_HSS2              (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_03)
+#define X_HOME              (INPUT_PULLUP     | PIN_PORT_E | PIN_NUM_06)
+#define X_STALL             (INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_13)
 
-//X
-#define X_DIR              (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_12) //(OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_15)
-#define X_STEP             (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_09)//(OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_02)
-#define X_HOME             (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_03)//(INPUT_PULLUP     | PIN_PORT_E | PIN_NUM_06)
-#define X_STALL            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_02)//(INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_13)
-#define X_EN               (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_07)//
-//
-//#define X_DIR           (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_12)
-//#define X_STEP          (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_09)
-//#define X_HOME          (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_03)
-//#define X_FAULT         (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_02)
-//#define X_L1            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_07)
-//#define X_L2            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_06)    //spare
+#define Y_EN                (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_13)
+#define Y_DIR               (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_15)
+#define Y_STEP              (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_08)
+#define Y_HSS1              (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_09)
+#define Y_HSS2              (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_10)
+#define Y_STALL             (INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_02)
+#define Y_HOME              (INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_03)
 
-//
-#define Y_DIR             (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_08)//(OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_15)
-#define Y_STEP            (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_13)//(OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_08)
-#define Y_HOME            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_01)//(INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_03)
-#define Y_STALL           (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_00)//(INPUT_PULLUP     | PIN_PORT_C | PIN_NUM_02)
-#define Y_EN              (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_03)//(OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_13)
-//
-//#define Y_DIR           (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_08)
-//#define Y_STEP          (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_13)
-//#define Y_HOME          (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_01)
-//#define Y_FAULT         (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_00)
-//#define Y_L1            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_03)
-//#define Y_L2            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_02)
+#define Z_STEP              (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_10)
+#define Z_DIR               (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_08)
+#define Z_EN                (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_06)
+#define Z_HSS1              (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_01) // goes to ALRAM (buzzer) on switch panel
+#define Z_HSS2              (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_00)
+#define Z_STALL             (INPUT_PULLUP     | PIN_PORT_F | PIN_NUM_04)
 
-//
-#define Z_DIR              (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_06)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_08)
-#define Z_STEP             (OUTPUT_PP_50MHZ   | PIN_PORT_B | PIN_NUM_07)// (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_10)
-#define Z_HOME             (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_10)// (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_10)
-#define Z_STALL            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_09)// (INPUT_PULLUP     | PIN_PORT_F | PIN_NUM_04)
-#define Z_EN               (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_12)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_06)
-//
-//#define Z_DIR           (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_06)
-//#define Z_STEP          (OUTPUT_PP_50MHZ   | PIN_PORT_B | PIN_NUM_07)
-//#define Z_HOME          (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_10)
-//#define Z_FAULT         (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_09)
-//#define Z_L1            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_12)
-//#define Z_L2            (INPUT_PULLUP      | PIN_PORT_G | PIN_NUM_11)
-
-
-//
-#define W_DIR              (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_03)// (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_11)
-#define W_STEP             (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_07)// (OUTPUT_PP_50MHZ  | PIN_PORT_A | PIN_NUM_03)
-#define W_HOME             (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_05)//(INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_14)
-#define W_STALL            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_04)// (INPUT_PULLUP     | PIN_PORT_E | PIN_NUM_00)
-#define W_EN               (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_07)// (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_12)
-//
-//#define A_DIR           (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_03)
-//#define A_STEP          (OUTPUT_PP_50MHZ   | PIN_PORT_D | PIN_NUM_07)
-//#define A_HOME          (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_05)
-//#define A_FAULT         (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_04)
-//#define A_L1            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_07)
-//#define A_L2            (INPUT_PULLUP      | PIN_PORT_I | PIN_NUM_06)
-//
-
-#define X_HSS1             (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_15)// (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_02) // goes to "LED" input on switch panel
-#define X_HSS2             (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_13)// (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_03)
-#define Y_HSS1             (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_14)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_09)
-#define Y_HSS2             (OUTPUT_PP_50MHZ   | PIN_PORT_C | PIN_NUM_09)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_10)
-#define Z_HSS1             (OUTPUT_PP_50MHZ   | PIN_PORT_G | PIN_NUM_14)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_01) // goes to ALRAM (buzzer) on switch panel
-#define Z_HSS2             (OUTPUT_PP_50MHZ   | PIN_PORT_G | PIN_NUM_13)// (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_00)
-#define W_HSS1             (OUTPUT_PP_50MHZ   | PIN_PORT_C | PIN_NUM_01)// (OUTPUT_PP_50MHZ  | PIN_PORT_E | PIN_NUM_01)
-#define W_HSS2             (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_02)//(OUTPUT_PP_50MHZ  | PIN_PORT_B | PIN_NUM_07)
-//
-//#define HSS_AUX_PWR1    (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_15)
-//#define HSS_AUX_PWR2    (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_13)
-//#define HSS_AUX_PWR4    (OUTPUT_PP_50MHZ   | PIN_PORT_H | PIN_NUM_14)
-//#define HSS_AUX_PWR5    (OUTPUT_PP_50MHZ   | PIN_PORT_C | PIN_NUM_09)
-//#define HSS_AUX_PWR6    (OUTPUT_PP_50MHZ   | PIN_PORT_G | PIN_NUM_14)
-//#define HSS_AUX_PWR7    (OUTPUT_PP_50MHZ   | PIN_PORT_G | PIN_NUM_13)
-//#define HSS_AUX_PWR8    (OUTPUT_PP_50MHZ   | PIN_PORT_C | PIN_NUM_01)
-//#define HSS_AUX_PWR9    (OUTPUT_PP_50MHZ   | PIN_PORT_A | PIN_NUM_02)
-//
-
-
+#define START               (INPUT_PULLUP     | PIN_PORT_F | PIN_NUM_05)
+#define Z_HOME              (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_10)
 #define Z_HOME1             (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_10)
 #define Z_HOME2             (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_09)
 #define Z_HOME3             (INPUT_PULLUP     | PIN_PORT_D | PIN_NUM_06)
 #define Z_HOME4             (INPUT_PULLUP     | PIN_PORT_D | PIN_NUM_03)
 #define Z_HOME5             (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_06)
 
-
-
-#define START               (INPUT_PULLUP      | PIN_PORT_B | PIN_NUM_00)// (INPUT_PULLUP    | PIN_PORT_F | PIN_NUM_05)
-//#define START           (INPUT_PULLUP      | PIN_PORT_B | PIN_NUM_00)
-
-#define HEARTBEAT           (OUTPUT_PP_50MHZ   | PIN_PORT_F | PIN_NUM_06)//(OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_15)
-//#define HEARTBEAT       (OUTPUT_PP_2MHZ    | PIN_PORT_C | PIN_NUM_03)
-
-#define CAN_TX_LED          (OUTPUT_PP_50MHZ   | PIN_PORT_F | PIN_NUM_06)// (OUTPUT_PP_50MHZ | PIN_PORT_G | PIN_NUM_01)
-//#define CAN_TX_LED      (OUTPUT_PP_50MHZ   | PIN_PORT_F | PIN_NUM_06)
-
-//
+#define HEARTBEAT           (OUTPUT_PP_50MHZ  | PIN_PORT_F | PIN_NUM_15)
 
 #define CAN1_RX             (PIN_AF_CAN1      | PIN_PORT_B | PIN_NUM_08 | PIN_PUPPD_PULLUP)
 #define CAN1_TX             (PIN_AF_CAN1      | PIN_PORT_B | PIN_NUM_09)
@@ -486,8 +421,6 @@ CO2_LASER_USES HSS4
 
 #define HIGHLOWSPEED        (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_09)
 #define SPINDLECOOLANT      (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_12)
-#define LATHE_STEP          (PIN_AF_TIM9       | PIN_OTYPE_PUSHPULL | PIN_OSPEED_100MHZ | PIN_PORT_A | PIN_NUM_03 | PIN_INIT_HIGH)
-
 
 #define OTG_FS_DM           (PIN_AF_OTG_FS     | PIN_PORT_A | PIN_NUM_11) //J20_P3 DO NOT USE UNLESS USB IS NOT USED
 #define OTG_FS_DP           (PIN_AF_OTG_FS     | PIN_PORT_A | PIN_NUM_12) //J20_P1 DO NOT USE UNLESS USB IS NOT USED
@@ -498,7 +431,7 @@ CO2_LASER_USES HSS4
 #define RELAY7              (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_10)
 #define RELAY8              (OUTPUT_PP_50MHZ  | PIN_PORT_C | PIN_NUM_11)
 
-
+#define CAN_TX_LED          (OUTPUT_PP_50MHZ  | PIN_PORT_G | PIN_NUM_01)
 
 #define NI_LCD_WR           (OUTPUT_PP_50MHZ  | PIN_PORT_D | PIN_NUM_05)
 #define NI_LCD_CS           (OUTPUT_PP_50MHZ  | PIN_PORT_D | PIN_NUM_07)
@@ -514,10 +447,10 @@ CO2_LASER_USES HSS4
 #define NI_Z_Q2             (INPUT_PULLUP     | PIN_PORT_F | PIN_NUM_02)     // Z_ENCB
 #define NI_Z_Q1             (INPUT_PULLUP     | PIN_PORT_F | PIN_NUM_03)     // Z_ENCA
 
-//#define CAN2_RX             (PIN_PUPPD_PULLUP   | PIN_PORT_B | PIN_NUM_05)
-//#define CAN2_TX             (OUTPUT_PP_50MHZ  | PIN_PORT_B | PIN_NUM_06 | PIN_INIT_HIGH)
-#define CAN2_RX             (PIN_AF_CAN2      | PIN_PORT_B | PIN_NUM_05 | PIN_PUPPD_PULLUP)
-#define CAN2_TX             (PIN_AF_CAN2      | PIN_PORT_B | PIN_NUM_06)
+#define CAN2_RX             (PIN_PUPPD_PULLUP   | PIN_PORT_B | PIN_NUM_05)
+#define CAN2_TX             (OUTPUT_PP_50MHZ  | PIN_PORT_B | PIN_NUM_06 | PIN_INIT_HIGH)
+//#define CAN2_RX             (PIN_AF_CAN2      | PIN_PORT_B | PIN_NUM_05 | PIN_PUPPD_PULLUP)
+//#define CAN2_TX             (PIN_AF_CAN2      | PIN_PORT_B | PIN_NUM_06)
 
 #define NI_SPI2_SCK         (OUTPUT_PP_50MHZ  | PIN_PORT_B | PIN_NUM_13)    // XXX NEEDS AF TO USE
 #define NI_SPI2_MISO        (INPUT_FLOATING   | PIN_PORT_B | PIN_NUM_14)    // XXX NEEDS AF TO USE
@@ -929,7 +862,7 @@ CO2_LASER_USES HSS4
 #else
 #define EMO_PIN C_L1
 #endif
-
+#endif  //PINOUT_100094
 ////////////////////////////////////////////////////////////////////////////////
 //  Global Variables defined in pinout that can be referenced by other modules
 ////////////////////////////////////////////////////////////////////////////////
