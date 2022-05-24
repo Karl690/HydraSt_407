@@ -60,7 +60,7 @@ void initClkAndResetAPB2(uint32_t periph)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-#ifdef STM32F4XX_HYREL
+#ifdef STM32F4XX
 
 void initClkAndResetAHB1(uint32_t periph)
 {
@@ -90,7 +90,7 @@ void initClkAndResetAHB3(uint32_t periph)
 	RCC->AHB3RSTR &= ~(periph); // remove reset from peripheral
 }
 
-#endif //STM32F4XX_HYREL
+#endif //STM32F4XX
 
 ////////////////////////////////////////////////////////////////////////////////
 

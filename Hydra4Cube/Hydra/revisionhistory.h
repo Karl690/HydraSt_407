@@ -849,7 +849,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #define SOFTWARE_MAJOR_REVISION     4   // XXX  update when a major change occurs (ie, protocol)
-#define SOFTWARE_MINOR_REVISION     000 // XXX  update for major and minor changes
+#define SOFTWARE_MINOR_REVISION     001 // XXX  update for major and minor changes
 #define SOFTWARE_TWEAK_REVISION    'K'  // XXX  update for small changes ('z' is for experimental ONLY)
 
 #define SOFTWARE_DEBUG_REVISION    'D'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)

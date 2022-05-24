@@ -30,11 +30,7 @@ typedef enum {
 	NUM_CAN_TRANSMIT_MAILBOXES,
 } canTransmitMailbox_t;
 
-#ifdef COMPILE_FOR_SYSTEM
 #define NUM_CAN_HW_UNITS    2
-#else
-#define NUM_CAN_HW_UNITS    1
-#endif
 
 
 #define CAN_READ                    0b00        // 0x00

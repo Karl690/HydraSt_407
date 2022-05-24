@@ -12,10 +12,12 @@
 // Copyright 2013  HYREL 3D, LLC.   All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-#ifdef PINOUT_10207
+#ifdef USE_102207
 #include <pinout_102207.h>
-#elif defined (PINOUT_100094)
+#elif defined (USE_100094)
 #include <pinout_100094.h>
+#elif defined (USE_102207H)
+#include <pinout_102207H.h>
 #endif
 #include "main.h"
 #include "pins.h" // (get our own global defines and typedefs)

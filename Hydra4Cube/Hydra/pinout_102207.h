@@ -1,5 +1,5 @@
-#ifndef pinout_HEADER // prevent double dipping
-#define pinout_HEADER
+#ifdef USE_102207
+#define USE_HYDRA_IO
 ////////////////////////////////////////////////////////////////////////////////
 //
 // File:    pinout.h
@@ -37,8 +37,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //  pinout specific global defines and macros needed by other modules
 ////////////////////////////////////////////////////////////////////////////////
-//#include "main.h"
-#ifdef PINOUT_102207
 #ifdef USE_HYDRA_IO
 
 #ifdef NEW_CO2_LASER_CONTROL_MODULE // no 103 board at power supply; co2 laser lens used for soapstring, etc
@@ -64,20 +62,20 @@ CO2_LASER_USES HSS4
 
 #endif //!NEW_CO2_LASER_CONTROL_MODULE
 
-#ifdef USE_AB_ENCODER
+//#ifdef USE_AB_ENCODER
 #define CO2_LASER_PWM   (PIN_AF_TIM2       | PIN_OTYPE_PUSHPULL | PIN_OSPEED_100MHZ | PIN_PORT_A | PIN_NUM_03 | PIN_INIT_HIGH)
 #define PANEL_ENC_A     (INPUT_PULLUP      | PIN_PORT_A | PIN_NUM_00 | PIN_AF_TIM5)
 #define PANEL_ENC_B     (INPUT_PULLUP      | PIN_PORT_A | PIN_NUM_01 | PIN_AF_TIM5)
 #define PANEL_ENC_SEL   (INPUT_PULLUP      | PIN_PORT_A | PIN_NUM_04)
 
-#else   // original defs (!USE_AB_ENCODER)
-
-#define AIN3            (ANALOG_FLOATING   | PIN_PORT_A | PIN_NUM_03)
-#define J19_10          (PIN_UNDEFINED     | PIN_PORT_A | PIN_NUM_00)  // undefined
-#define CO2_LASER_PWM   (PIN_AF_TIM5       | PIN_OTYPE_PUSHPULL | PIN_OSPEED_100MHZ | PIN_PORT_A | PIN_NUM_01 | PIN_INIT_HIGH)
-#define DAC1_OUT        (ANALOG_FLOATING   | PIN_PORT_A | PIN_NUM_04)
-
-#endif  // !USE_AB_ENCODER
+//#else   // original defs (!USE_AB_ENCODER)
+//
+//#define AIN3            (ANALOG_FLOATING   | PIN_PORT_A | PIN_NUM_03)
+//#define J19_10          (PIN_UNDEFINED     | PIN_PORT_A | PIN_NUM_00)  // undefined
+//#define CO2_LASER_PWM   (PIN_AF_TIM5       | PIN_OTYPE_PUSHPULL | PIN_OSPEED_100MHZ | PIN_PORT_A | PIN_NUM_01 | PIN_INIT_HIGH)
+//#define DAC1_OUT        (ANALOG_FLOATING   | PIN_PORT_A | PIN_NUM_04)
+//
+//#endif  // !USE_AB_ENCODER
 
 #ifdef USE_6_TO_ONE_SELECT
 
@@ -929,7 +927,6 @@ CO2_LASER_USES HSS4
 #else
 #define EMO_PIN C_L1
 #endif
-#endif //PINOUT_102207
 ////////////////////////////////////////////////////////////////////////////////
 //  Global Variables defined in pinout that can be referenced by other modules
 ////////////////////////////////////////////////////////////////////////////////

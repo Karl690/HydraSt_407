@@ -34,6 +34,8 @@
 #include "display.h"
 #include "exti_4xx.h"
 
+
+
 void initKey(boolean a, char * b, char * c) {}
 
 #ifdef HYDRA_DIAGS

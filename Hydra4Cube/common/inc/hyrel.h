@@ -528,10 +528,10 @@ typedef struct {
 #elif defined (COMPILE_FOR_DEVICE)
 #define CAN_TX_QUEUE_SIZE 128 //192
 #define CAN_RX_QUEUE_SIZE 128 //256
-#elif defined (STM32F4XX_HYREL) && defined (HYDRA_DIAGS)
+#elif defined (STM32F4XX) && defined (HYDRA_DIAGS)
 #define CAN_TX_QUEUE_SIZE 384
 #define CAN_RX_QUEUE_SIZE 384
-#elif defined (STM32F4XX_HYREL)
+#elif defined (STM32F4XX)
 #define CAN_TX_QUEUE_SIZE 512
 #define CAN_RX_QUEUE_SIZE 512
 #else

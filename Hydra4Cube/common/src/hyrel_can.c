@@ -14,16 +14,11 @@
 
 // There is a great explanation of the canbus located @    http://en.wikipedia.org/wiki/CAN_bus
 
-#ifdef COMPILE_FOR_DEVICE   // head of some sort
-#include "main.h"
-#endif
 
-#ifdef COMPILE_FOR_SYSTEM   // motion controller
 #include "main.h"
 #include "can_4xx.h"
 #include "serial.h"
 #include "mailbox.h"
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -87,93 +82,6 @@ uint32_t calculateChecksum32(uint32_t data[], uint32_t numWords)
 	}
 	return(checksum);
 }
-
-////////////////////////////////////////////////////////////////////////////////
-#ifdef COMPILE_FOR_DEVICE
-
-void canInitFilter(CAN_TypeDef *CANx, byte filterNum, byte alias, boolean immediate, boolean enable)
-{
-#define FMR_FINIT    ((uint32_t)0x00000001) // Filter init mode
-
-	uint32_t filterBit;
-
-	filterBit   = (1 << filterNum);
-
-	CANx->FMR |= FMR_FINIT;                 // Initialization mode for the filter
-	CANx->FA1R &= ~filterBit;               // Filter Deactivation
-
-	CANx->FS1R |= filterBit;                // 32-bit scale for the filter
-	CANx->FM1R &= ~filterBit;               // Id+Mask mode for the filter
-
-	if (immediate)
-	{
-		CANx->FFA1R |= filterBit;           // assign FIFO 1 for immediate mode the filters
-		CANx->sFilterRegister[filterNum].FR1 = FILTER_CONSTANT_VALUE | FILTER_IMMEDIATE_BIT;                    // compare value
-		CANx->sFilterRegister[filterNum].FR2 = FILTER_MASK_CONSTANT_HEAD;                                                // compare mask
-	}
-	else
-	{
-		CANx->FFA1R &= ~filterBit;          // assign FIFO 0 for non-immediate mode (buffered) filters
-		CANx->sFilterRegister[filterNum].FR1 = FILTER_CONSTANT_VALUE | (alias << FILTER_DEVICE_LSB_POSITION);   // compare value
-		CANx->sFilterRegister[filterNum].FR2 = (FILTER_MASK_CONSTANT_HEAD | FILTER_MASK_DEVICE);                     // compare mask
-	}
-
-	if (enable == TRUE)
-	{
-		CANx->FA1R |= filterBit;            // Filter Activation
-	}
-
-	CANx->FMR &= ~FMR_FINIT;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-void canAddUserDefinedAlias(byte newAlias, byte aliases[])
-{
-	byte i;
-
-	// first, find an open slot within the range specified
-	for (i=0; i<NUM_USER_DEFINED_ALIASES; i++)
-	{
-		if (aliases[i] == ALIAS_UNUSED)
-		{
-			// filters are ordered predef(4), the user(8)
-			canInitFilter(CAN1, NUM_PRE_DEFINED_ALIASES+i, newAlias, FALSE, TRUE);
-			aliases[i] = newAlias;
-			break;
-		}
-	}
-	if (i == NUM_USER_DEFINED_ALIASES)
-	{
-#if defined (COMPILE_FOR_DEVICE)
-		reportError1x32(STICKY_TOO_MANY_ALIASES, ERROR_UNIT_CAN, ERROR_TOO_MANY_ALIASES, (uint32_t)newAlias);
-#elif defined (COMPILE_FOR_SYSTEM)
-		sprintf(_errorStr, "ERROR_TOO_MANY_ALIASES: newAlias=%d", newAlias);
-#endif
-	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-void canRemoveUserDefinedAlias(byte oldAlias, byte aliases[])
-{
-	byte i;
-
-	// find matching alias and disable it
-	for (i=0; i<NUM_USER_DEFINED_ALIASES; i++)
-	{
-		if (aliases[i] == oldAlias)
-		{
-			// filters are ordered predef(4), the user(8)
-			canInitFilter(CAN1, NUM_PRE_DEFINED_ALIASES+i, ALIAS_UNUSED, FALSE, FALSE);
-			aliases[i] = ALIAS_UNUSED;
-			break;
-		}
-	}
-}
-
-#endif //COMPILE_FOR_DEVICE
-
 ////////////////////////////////////////////////////////////////////////////////
 
 boolean canIsValidAlias(byte device)
@@ -261,22 +169,12 @@ byte canCheckCanStruct(canStruct *canStructPtr)
 	// (checking page range dropped for V1)
 	byte msgIdNumBytes;
 
-#if defined (COMPILE_DEVICE_FOR_CANBUS_FORMAT_V1)
-	canbusFormat_t canFmt = CANBUS_FORMAT_V1;
-#elif defined (COMPILE_DEVICE_FOR_CANBUS_FORMAT_V2)
-	canbusFormat_t canFmt = CANBUS_FORMAT_V2;
-#elif defined (COMPILE_FOR_SYSTEM)
 	canbusFormat_t canFmt = getInboxPointer(canStructPtr->sw.device)->canbusFormat;
-#endif
 
 	msgIdNumBytes = canMsgIdToNumBytes(canStructPtr->sw.msgId, canFmt);
 	if (msgIdNumBytes != canStructPtr->sw.numBytes)
 	{
 
-#if defined (COMPILE_FOR_DEVICE)
-		reportError4x8(STICKY_NUM_BYTES_MISMATCH, ERROR_UNIT_CAN, ERROR_NUM_BYTES_MISMATCH,
-				canStructPtr->sw.msgType, canStructPtr->sw.msgId, msgIdNumBytes, canStructPtr->sw.numBytes);
-#elif defined (COMPILE_FOR_SYSTEM)
 		if (_errors.sent.flags.canNumBytesMismatch == FALSE)
 		{
 			_errors.sent.flags.canNumBytesMismatch = TRUE;
@@ -284,7 +182,6 @@ byte canCheckCanStruct(canStruct *canStructPtr)
 					canStructPtr->sw.msgType, canStructPtr->sw.msgId, msgIdNumBytes, canStructPtr->sw.numBytes);
 			sendError(_errorStr);
 		}
-#endif
 		return(ERROR_NUM_BYTES_MISMATCH);
 	}
 	return(PASS);
@@ -337,7 +234,7 @@ byte canTransmit(CAN_TypeDef *CANx, canHwStruct *canHwStructPtr)
 	{
 		mailboxPtr = &CANx->sTxMailBox[transmitMailbox];
 
-#if defined (COMPILE_FOR_SYSTEM)
+
 		if (_sendingGBStringsMask & GB_STRING_CANBUS) // use M797 S<mask> to enable
 		{
 			if (CANx == CAN1)
@@ -362,7 +259,6 @@ byte canTransmit(CAN_TypeDef *CANx, canHwStruct *canHwStructPtr)
 				sendGB(_rptStr);
 			}
 		}
-#endif //COMPILE_FOR_SYSTEM
 
 		mailboxPtr->TIR     = canHwStructPtr->IR;
 		mailboxPtr->TDTR    = canHwStructPtr->DTR;
@@ -496,24 +392,17 @@ byte canProcessTxQueue()
 		}
 #endif //USE_CAN2
 
-#ifdef COMPILE_FOR_SYSTEM
 	if (_gs._bl.started == TRUE)
 	{
 		canNumTxTransfersPerSlice = 1;  // slow down bootloader comm as bootloader does not have a large input fifo
 	}
-#endif
 
 	for (i=0; i<canNumTxTransfersPerSlice; i++)
 	{
-#ifdef COMPILE_FOR_DEVICE
-		if ((!CAN_INITIALIZED) || (_gs._canTxQ.numMsg == 0))    // not ready to send message OR nothing to send
-			return(CAN_TX_OK);
-#elif defined (COMPILE_FOR_SYSTEM)
 		if (_gs._canTxQ.numMsg == 0)    // nothing to send
 		{
 			return(CAN_TX_OK);
 		}
-#endif
 
 
 		retValue = canTransmitSwPacket(&_gs._canTxQ.Q[_gs._canTxQ.nextOut].sw);
@@ -529,27 +418,6 @@ byte canProcessTxQueue()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#ifdef COMPILE_FOR_DEVICE
-canStruct *canGetTxQueueNextInPtr()
-{
-	// function to return next open spot in the queue.  if there's no slot, wait at least 1ms to
-
-	if (_gs._canTxQ.numMsg >= CAN_TX_QUEUE_SIZE)
-	{
-		// PROBLEM .... if no room in queue, the the errorReport will not make it into the queue!!!!
-		updateTxQueueIndices();             //   so....open up one space in the queue (overwriting oldest
-#if defined(COMPILE_FOR_DEVICE)
-		reportError1x32(STICKY_TX_QUEUE_FULL, ERROR_UNIT_CAN, ERROR_TX_QUEUE_FULL, CAN_TX_QUEUE_SIZE);
-#endif //COMPILE_FOR_DEVICE
-		return((canStruct *)0x00000000);    // return NIL pointer if no room in the queue
-	}
-	else
-	{
-		return(&_gs._canTxQ.Q[_gs._canTxQ.nextIn]);
-	}
-}
-#elif defined (COMPILE_FOR_SYSTEM)
 canStruct *canGetTxQueueNextInPtr()
 {
 	// function to return next open spot in the queue.  if there's no slot, wait at least 1ms to
@@ -568,7 +436,6 @@ canStruct *canGetTxQueueNextInPtr()
 		return(&_gs._canTxQ.Q[_gs._canTxQ.nextIn]);
 	}
 }
-#endif //COMPILE_FOR_SYSTEM
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -597,9 +464,7 @@ void canFillOutCanStruct(canSwStruct *canSwStructPtr, canbusFormat_t canFmt)
 	canSwStructPtr->RTR             = (canSwStructPtr->msgType == CAN_READ);        // set RTR on CAN_READ, 0 otherwise
 	canSwStructPtr->fixed_b0        = 0b0;
 	canSwStructPtr->numBytes        = canMsgIdToNumBytes(canSwStructPtr->msgId, canFmt);
-#ifdef COMPILE_FOR_SYSTEM
 	canSwStructPtr->device          = remapDevicePosition(canSwStructPtr->device); // remap alias
-#endif //COMPILE_FOR_SYSTEM
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -612,7 +477,6 @@ byte canAddToTxQueue(canSwStruct *canSwStructPtr)
 
 	canStruct *nextInPtr;
 
-#ifdef COMPILE_FOR_SYSTEM
 	if (_printAir && !((canSwStructPtr->msgId==CAN_MSG_CONTROL_WORD) && (canSwStructPtr->payload.u32[1]==HH_COMM_PING_BIT)))
 	{   // nuke any non comm ping control word message to heads
 		return(CAN_TX_OK);
@@ -630,31 +494,19 @@ byte canAddToTxQueue(canSwStruct *canSwStructPtr)
 			return(CAN_TX_UNREGISTERED_DESTINATION);
 		}
 	}
-#endif // COMPILE_FOR_SYSTEM
-
-#if defined (COMPILE_DEVICE_FOR_CANBUS_FORMAT_V1)
-	canbusFormat_t canFmt = CANBUS_FORMAT_V1;
-#elif defined (COMPILE_DEVICE_FOR_CANBUS_FORMAT_V2)
-	canbusFormat_t canFmt = CANBUS_FORMAT_V2;
-#elif defined (COMPILE_FOR_SYSTEM)
 	canbusFormat_t canFmt = getInboxPointer(canSwStructPtr->device)->canbusFormat;
-#endif
 
 	canFillOutCanStruct(canSwStructPtr, canFmt);    // fill in reserved fields, numBytes, IDE, RTR, etc
 
 	byte retValue = CAN_TX_OK;
-#if defined (COMPILE_FOR_SYSTEM)
 	if (_gs._canTxQ.numMsg == 0)
-#elif defined(COMPILE_FOR_DEVICE)
-		if (CAN_INITIALIZED && (_gs._canTxQ.numMsg == 0))
-#endif
-		{       // queue is empty, so jump right to the hardware
-			retValue = canTransmitSwPacket(canSwStructPtr);
-			if (retValue != CAN_TxStatus_NoMailBox)
-			{
-				return(CAN_TX_OK);      // packet sent bypassing the sw queue, so we're done.
-			}
+	{       // queue is empty, so jump right to the hardware
+		retValue = canTransmitSwPacket(canSwStructPtr);
+		if (retValue != CAN_TxStatus_NoMailBox)
+		{
+			return(CAN_TX_OK);      // packet sent bypassing the sw queue, so we're done.
 		}
+	}
 	// if we get here, the queue was not empty OR was empty but there was no room in the CAN hw unit 3-deep fifo
 	// so add the packet to the software based queue
 
@@ -1129,7 +981,7 @@ byte canAddToImmediateRxQueue()
 		}
 		returnValue = CAN_RX_OK;
 	}
-#ifdef COMPILE_FOR_SYSTEM
+
 #ifdef USE_CAN2
 		if (canMsgWaitingFifo1(CAN2) == TRUE)
 		{
@@ -1146,15 +998,6 @@ byte canAddToImmediateRxQueue()
 			returnValue = CAN_RX_OK;
 		}
 #endif //USE_CAN2
-#endif //COMPILE_FOR_SYSTEM
-#if defined(COMPILE_FOR_DEVICE)
-if (_gs._canImmediateRxIsAvail == TRUE)
-	{
-		// activate status lights for receive
-		_gs._led.canRxLedCnt = LED_COUNTER_START_VALUE_FOR_ONE_SHOT_FLASH; // will result in 10ms to 20ms on time;
-	}
-#endif
-
 	return(returnValue);
 }
 
@@ -1169,15 +1012,11 @@ byte canAddToRxQueue()
 
 	if (_gs._canRxQ.numMsg >= CAN_RX_QUEUE_SIZE)
 	{
-#if defined(COMPILE_FOR_DEVICE)
-		reportError1x32(STICKY_RX_QUEUE_FULL, ERROR_UNIT_CAN, ERROR_RX_QUEUE_FULL, CAN_RX_QUEUE_SIZE);
-#elif defined (COMPILE_FOR_SYSTEM)
 		if (_errors.sent.flags.canRxFull == FALSE)
 		{
 			_errors.sent.flags.canRxFull = TRUE;
 			sendError("ERROR_RX_QUEUE_FULL");
 		}
-#endif
 		return(ERROR_RX_QUEUE_FULL);
 	}
 
@@ -1185,7 +1024,6 @@ byte canAddToRxQueue()
 	{
 		canReceiveFifo0(CAN1, (canHwStruct *)&_gs._canRxQ.Q[_gs._canRxQ.nextIn]);
 
-#if defined (COMPILE_FOR_SYSTEM)
 		if (_sendingGBStringsMask & GB_STRING_CANBUS) // use M797 S<mask> to enable
 		{
 			float currTime =  (float)_gs._sliceCnt / (float)(SYSTICKS_PER_SECOND);
@@ -1199,7 +1037,6 @@ byte canAddToRxQueue()
 			}
 			sendGB(_rptStr);
 		}
-#endif // COMPILE_FOR_SYSTEM
 
 		_gs._canRxQ.Q[_gs._canRxQ.nextIn].sw.fromCAN2 = 0;
 		_gs._canRxQ.numMsg++;
@@ -1218,7 +1055,7 @@ byte canAddToRxQueue()
 		returnValue = CAN_RX_OK;
 	}
 
-#if defined (COMPILE_FOR_SYSTEM)
+
 #ifdef USE_CAN2
 		// process CAN2
 		if (_gs._canRxQ.numMsg >= CAN_RX_QUEUE_SIZE)
@@ -1264,7 +1101,7 @@ byte canAddToRxQueue()
 			returnValue = CAN_RX_OK;
 		}
 #endif //USE_CAN2
-#endif // COMPILE_FOR_SYSTEM
+
 	return(returnValue);
 }
 
@@ -1306,7 +1143,7 @@ boolean canPrepNextRx(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef COMPILE_FOR_SYSTEM
+
 extern void canFillDeviceBuffer(byte, uint32_t);
 int canSendStringToWorkingBufferOnDevice(byte device, char str[])
 {	// sends nullchar as well
@@ -1382,29 +1219,7 @@ boolean canReceiveString(canSwStruct *canRx, int *charsReceived, char *receiveSt
 	}
 	return(lastPacket);
 }
-#endif //COMPILE_FOR_SYSTEM
 
-////////////////////////////////////////////////////////////////////////////////
-
-#ifdef COMPILE_FOR_DEVICE
-
-void canSendString(byte device, char str[])
-{
-	char *subStrPtr = str;
-	byte payload[8];
-	uint32_t charsInPacket;
-	uint32_t charsRemaining = strlen(str) + 1; // includes NULL_CHAR
-
-	while (charsRemaining > 0)
-	{
-		charsInPacket = umin(charsRemaining, 8);
-		memcpy(payload, (byte *)subStrPtr, charsInPacket);
-		canPackIntoTxQueue8x8(CAN_WRITE, device, CAN_MSG_STRING, charsInPacket, FALSE, payload);
-		charsRemaining -= charsInPacket;
-		subStrPtr += charsInPacket;
-	}
-}
-#endif //COMPILE_FOR_DEVICE
 ////////////////////////////////////////////////////////////////////////////////
 // SIMPLE ROUTINES /////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

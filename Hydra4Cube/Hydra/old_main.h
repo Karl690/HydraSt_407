@@ -9,10 +9,6 @@
 #define OLD_MAIN_H_
 
 
-#ifndef COMPILE_FOR_SYSTEM
-#define COMPILE_FOR_SYSTEM
-#endif
-
 #if (SOFTWARE_TWEAK_REVISION == 'z')
 #if defined(USE_HYREL_IO)
 #define PLATFORM_STRING       "DEBUG_EngineSR_30M"
@@ -36,13 +32,6 @@
 //#undef USE_CAN2     // HYREL build does not USE CAN2
 //#endif //USE_HYREL_IO
 
-#ifdef HYDRA_DIAGS
-//#define GB_DIAGS_NEED_SWD_PINS_FOR_DEBUG
-#endif
-
-#ifdef USE_HYDRA_IO
-#define USE_AB_ENCODER      // affects IO definitions
-#endif //USE_HYDRA_IO
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,9 +44,27 @@
 #include "string.h" // random utilities (including bzero)
 #include "headSetup.h"
 #include "pins.h"
+
+#ifdef USE_102207
+#include <pinout_102207.h>
+#elif defined (USE_100094)
+#include <pinout_100094.h>
+#elif defined (USE_102207H)
+#include <pinout_102207H.h>
+#endif
+
 #ifdef ADD_ON_SPI_DISPLAY
 #include "lcd.h"
 #endif //ADD_ON_SPI_DISPLAY
+
+
+#ifdef HYDRA_DIAGS
+//#define GB_DIAGS_NEED_SWD_PINS_FOR_DEBUG
+#endif
+
+#ifdef USE_HYDRA_IO
+#define USE_AB_ENCODER      // affects IO definitions
+#endif //USE_HYDRA_IO
 
 ////////////////////////////////////////////////////////////////////////////////
 //  main specific global defines and macros needed by other modules
