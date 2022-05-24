@@ -14,11 +14,16 @@
 
 // There is a great explanation of the canbus located @    http://en.wikipedia.org/wiki/CAN_bus
 
+#ifdef COMPILE_FOR_DEVICE   // head of some sort
 #include "main.h"
-#include "oldmain.h"
+#endif
+
+#ifdef COMPILE_FOR_SYSTEM   // motion controller
+#include "main.h"
+#include "can_4xx.h"
 #include "serial.h"
 #include "mailbox.h"
-#include "hyrel.h"
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 

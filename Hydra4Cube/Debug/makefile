@@ -9,14 +9,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/subdir.mk
--include common/src/subdir.mk
--include common/lcd/fonts/subdir.mk
--include common/lcd/controllers/ST_ORIG/st7735/subdir.mk
--include common/lcd/controllers/ST_ORIG/ili9341/subdir.mk
--include common/lcd/controllers/ST_ORIG/subdir.mk
--include common/lcd/controllers/subdir.mk
--include common/lcd/subdir.mk
 -include USB_DEVICE/Target/subdir.mk
 -include USB_DEVICE/App/subdir.mk
 -include Middlewares/ST/STM32_USB_Device_Library/Core/Src/subdir.mk
@@ -72,8 +64,8 @@ all: main-build
 main-build: Hydra4Cube.elf secondary-outputs
 
 # Tool invocations
-Hydra4Cube.elf Hydra4Cube.map: $(OBJS) $(USER_OBJS) C:\Users\karl6\Documents\GitHub\HydraSt_407\Hydra4Cube\STM32F407IGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Hydra4Cube.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\karl6\Documents\GitHub\HydraSt_407\Hydra4Cube\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra4Cube.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Hydra4Cube.elf Hydra4Cube.map: $(OBJS) $(USER_OBJS) D:\HYREL\GIT\HydraSt_407\Hydra4Cube\STM32F407IGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Hydra4Cube.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\HYREL\GIT\HydraSt_407\Hydra4Cube\STM32F407IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hydra4Cube.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

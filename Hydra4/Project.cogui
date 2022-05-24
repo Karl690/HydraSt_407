@@ -43,7 +43,7 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/Users/karl6/Documents/GitHub/Hydra4/inc/main.h" title="main.h" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/inc/main.h" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="D:/HYREL/GIT/HydraSt_407/Hydra4/inc/main.h" title="main.h" tooltip="D:/HYREL/GIT/HydraSt_407/Hydra4/inc/main.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/main.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="68840" selectionTopPixel="21672"/>
 </editor>
@@ -204,7 +204,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.coocox.builder.ui.views.ProjectView" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -584,47 +584,47 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="Project/cmsis_boot/startup/startup_stm32f4xx.c">
-<persistable path="/Project/cmsis_boot/startup/startup_stm32f4xx.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_can.h" tooltip="Project/cmsis_lib/inc/stm32f4xx_can.h">
+<persistable path="/Project/cmsis_lib/inc/stm32f4xx_can.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Project/cmsis_boot/stm32f4xx.h">
 <persistable path="/Project/cmsis_boot/stm32f4xx.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pinInit.c" tooltip="Project/src/pinInit.c">
-<persistable path="/Project/src/pinInit.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.c" tooltip="Project/cmsis_lib/src/stm32f4xx_gpio.c">
+<persistable path="/Project/cmsis_lib/src/stm32f4xx_gpio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gpio.h" tooltip="Project/inc/gpio.h">
+<persistable path="/Project/inc/gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bootloader.c" tooltip="Project/src/bootloader.c">
+<persistable path="/Project/src/bootloader.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="HardwareInit.h" tooltip="Project/inc/HardwareInit.h">
 <persistable path="/Project/inc/HardwareInit.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pins_stm32f10x.h" tooltip="Project/common/inc/pins_stm32f10x.h">
-<persistable path="/Project/common/inc/pins_stm32f10x.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_core.c" tooltip="Project/usb_lib/src/usb_core.c">
+<persistable path="/Project/usb_lib/src/usb_core.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pins_stm32f4xx.h" tooltip="Project/common/inc/pins_stm32f4xx.h">
-<persistable path="/Project/common/inc/pins_stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_dcd.c" tooltip="Project/usb_lib/src/usb_dcd.c">
+<persistable path="/Project/usb_lib/src/usb_dcd.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Serial.h" tooltip="Project/inc/Serial.h">
-<persistable path="/Project/inc/Serial.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_usr.c" tooltip="Project/usb_lib/src/usbd_usr.c">
+<persistable path="/Project/usb_lib/src/usbd_usr.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_core.c" tooltip="Project/usb_lib/src/usbd_core.c">
-<persistable path="/Project/usb_lib/src/usbd_core.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_req.c" tooltip="Project/usb_lib/src/usbd_req.c">
+<persistable path="/Project/usb_lib/src/usbd_req.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="Project/inc/main.h">
-<persistable path="/Project/inc/main.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_desc.c" tooltip="Project/usb_lib/src/usbd_desc.c">
+<persistable path="/Project/usb_lib/src/usbd_desc.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="GD32MotorController/main.h">
-<persistable path="/GD32MotorController/main.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mailbox.h" tooltip="Project/inc/mailbox.h">
+<persistable path="/Project/inc/mailbox.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Hydra_can.c" tooltip="Project/src/Hydra_can.c">
-<persistable path="/Project/src/Hydra_can.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="canbus.c" tooltip="Project/src/canbus.c">
+<persistable path="/Project/src/canbus.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.c" tooltip="Project/display/display.c">
-<persistable path="/Project/display/display.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.h" tooltip="Project/display/display.h">
-<persistable path="/Project/display/display.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gpio.c" tooltip="Project/src/gpio.c">
-<persistable path="/Project/src/gpio.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" tooltip="Project/common/inc/hyrel.h">
+<persistable path="/Project/common/inc/hyrel.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" tooltip="Project/common/inc/hyrel.h">
 <persistable path="/Project/common/inc/hyrel.h"/>

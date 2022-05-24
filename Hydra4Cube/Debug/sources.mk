@@ -28,12 +28,4 @@ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src \
 USB_DEVICE/App \
 USB_DEVICE/Target \
-common/lcd/controllers/ST_ORIG/ili9341 \
-common/lcd/controllers/ST_ORIG/st7735 \
-common/lcd/controllers/ST_ORIG \
-common/lcd/controllers \
-common/lcd/fonts \
-common/lcd \
-common/src \
-src \
 

@@ -30,6 +30,13 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "hyrel_stm32f4xx.h"
+#include "hyrel.h"
+#include "old_main.h"
+#include "pinout.h"
+#include "pins.h"
+#include "hyrel_can.h"
+#include "old_main.h"
 
 /* USER CODE END Includes */
 

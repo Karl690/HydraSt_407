@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
-#include "oldmain.h"
+#include "misc_4xx.h"
 #include "util.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -96,7 +96,7 @@ void initClkAndResetAHB3(uint32_t periph)
 
 void interruptSetupAndDisable(uint8_t channel, uint8_t priority)
 {
-	NVIC_InitTypeDef NVIC_InitStructure;
+	HYREL_NVIC_InitTypeDef NVIC_InitStructure;
 
 	NVIC_InitStructure.NVIC_IRQChannel                      = channel;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority    = priority;
@@ -109,7 +109,7 @@ void interruptSetupAndDisable(uint8_t channel, uint8_t priority)
 
 void interruptSetupAndEnable(uint8_t channel, uint8_t priority)
 {
-	NVIC_InitTypeDef NVIC_InitStructure;
+	HYREL_NVIC_InitTypeDef NVIC_InitStructure;
 
 	NVIC_InitStructure.NVIC_IRQChannel                      = channel;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority    = priority;
@@ -368,7 +368,7 @@ void  __attribute__((always_inline)) interruptsOn(uint32_t irq_disabled)
 ////////////////////////////////////////////////////////////////////////////////
 
 //#ifdef ADD_ON_SPI_DISPLAY
-
+#include "math.h"
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wreturn-type"
 #ifdef STM32F4XX
@@ -379,7 +379,7 @@ float fpu_sqrtf(float op)
 		//                      "  vmov.f32  s0, s15");
 }
 #else
-#include "math.h"
+
 float fpu_sqrtf(float op)
 {
 	return(sqrtf(op));

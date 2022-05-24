@@ -14,9 +14,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "main.h"
-#include "oldmain.h"
 #include "pins.h" // (get our own global defines and typedefs)
-
+#include "pinout.h"
 ////////////////////////////////////////////////////////////////////////////////
 //  Local #defines (defines ONLY used in this module)
 ////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +36,7 @@
 //
 //    Each pin will have a #define that will concatinate all the values needed
 //    to define everything to setup, initialize, and commmunicate into a
-//    single 32-bit unsigned int.   All access to the pins, whether for 
+//    single 32-bit unsigned int.   All access to the pins, whether for
 //    initialization, reading or writing, etc will use these #defines.  This
 //    will allow simple porting of code between board/processor changes as
 //    only the PORT and PIN part of the #define will need to be modified and
@@ -45,27 +44,25 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-GPIO_TypeDef PGIOZ_fake;
-GPIO_TypeDef *GPIOZ = &PGIOZ_fake;
+HYREL_GPIO_TypeDef PGIOZ_fake;
+HYREL_GPIO_TypeDef *GPIOZ = &PGIOZ_fake;
 
-GPIO_TypeDef *pinExtractPortPtr(pinType pin)
+HYREL_GPIO_TypeDef *pinExtractPortPtr(pinType pin)
 {   // return address pointer to this pin's port
 	if (pin != PIN_UNDEFINED)
 	{
 		switch (pinExtractPortNum(pin))
 		{
-		case GPIO_PortSourceGPIOA : return(GPIOA);
-		case GPIO_PortSourceGPIOB : return(GPIOB);
-		case GPIO_PortSourceGPIOC : return(GPIOC);
-#ifdef STM32F4XX_HYREL
-		case GPIO_PortSourceGPIOD : return(GPIOD);
-		case GPIO_PortSourceGPIOE : return(GPIOE);
-		case GPIO_PortSourceGPIOF : return(GPIOF);
-		case GPIO_PortSourceGPIOG : return(GPIOG);
-		case GPIO_PortSourceGPIOH : return(GPIOH);
-		case GPIO_PortSourceGPIOI : return(GPIOI);
-#endif //STM32F4XX_HYREL
-		default: return(GPIOZ); // pointer to fake I/O mem area
+		case GPIO_PortSourceGPIOA : return(HYREL_GPIOA);
+		case GPIO_PortSourceGPIOB : return(HYREL_GPIOB);
+		case GPIO_PortSourceGPIOC : return(HYREL_GPIOC);
+		case GPIO_PortSourceGPIOD : return(HYREL_GPIOD);
+		case GPIO_PortSourceGPIOE : return(HYREL_GPIOE);
+		case GPIO_PortSourceGPIOF : return(HYREL_GPIOF);
+		case GPIO_PortSourceGPIOG : return(HYREL_GPIOG);
+		case GPIO_PortSourceGPIOH : return(HYREL_GPIOH);
+		case GPIO_PortSourceGPIOI : return(HYREL_GPIOI);
+		//default: return(HYREL_GPIOZ); // pointer to fake I/O mem area
 		}
 	}
 	else
@@ -76,39 +73,6 @@ GPIO_TypeDef *pinExtractPortPtr(pinType pin)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef STM32F10X_HYREL
-void pinInit(pinType pin)
-{
-	if (pin != PIN_UNDEFINED)
-	{   // skip if not a valid pin
-		GPIO_TypeDef *port = pinExtractPortPtr(pin);
-
-		// there are 2 configuration control registers, low and high
-		// each one has 8 groups of 4 bits that control the configuration of the
-		// pin, input output pull up  pull down, etc
-		int modeShift;
-		if (pinExtractPinNum(pin) < 8)
-		{   // Lower reg pins[7:0]
-			modeShift = pinExtractPinNum(pin) << 2;
-			port->CRL &= ~(0xf << modeShift);           // clear the 4 mode control bits for this pin
-			port->CRL |= (pinExtractMode(pin) << modeShift);        // OR in the new mode control bits
-		}
-		else
-		{   // Upper reg pins[15:8]
-			modeShift = (pinExtractPinNum(pin) - 8) << 2;
-			port->CRH &= ~(0xf << modeShift);       // clear the 4 mode control bits for this pin
-			port->CRH |= (pinExtractMode(pin) << modeShift);    // OR in the new mode control bits
-		}
-
-		if (pinExtractInitEn(pin))
-		{   // initialize pin
-			pinWrite(pin, pinExtractInitVal(pin) & 0x1);
-		}
-	}
-}
-#endif //STM32F10X_HYREL
-
-#ifdef STM32F4XX_HYREL
 void pinInit(pinType pin)
 {   // init the pin using the ST provided routine (can be put inline and sped up
 	// if needed
@@ -124,14 +88,14 @@ void pinInit(pinType pin)
 
 			// Warning: GPIO_PinAFConfig uses the BinNum and not BitPos like the other GPIO routines
 
-			GPIO_PinAFConfig(pinExtractPortPtr(pin), pinExtractPinNum(pin), pinExtractAF(pin));
+			HYREL_GPIO_PinAFConfig(pinExtractPortPtr(pin), pinExtractPinNum(pin), pinExtractAF(pin));
 		}
 		else
 		{
-			GPIO_PinAFConfig(pinExtractPortPtr(pin), pinExtractPinNum(pin), 0);
+			HYREL_GPIO_PinAFConfig(pinExtractPortPtr(pin), pinExtractPinNum(pin), 0);
 		}
 
-		GPIO_InitTypeDef GPIO_InitStructure;
+		HYREL_GPIO_InitTypeDef GPIO_InitStructure;
 
 		GPIO_InitStructure.GPIO_Pin   = pinExtractPinMask(pin);
 		GPIO_InitStructure.GPIO_Mode  = pinExtractMode(pin);
@@ -139,7 +103,7 @@ void pinInit(pinType pin)
 		GPIO_InitStructure.GPIO_OType = pinExtractOType(pin);
 		GPIO_InitStructure.GPIO_PuPd  = pinExtractPupd(pin);
 
-		GPIO_Init(pinExtractPortPtr(pin), &GPIO_InitStructure);
+		HYREL_GPIO_Init(pinExtractPortPtr(pin), &GPIO_InitStructure);
 
 		if (pinExtractInitEn(pin))
 		{   // initialize pin
@@ -147,7 +111,6 @@ void pinInit(pinType pin)
 		}
 	}
 }
-#endif //STM32F4XX_HYREL
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -157,11 +120,7 @@ void pinClear(pinType pin)
 
 	if (pin != PIN_UNDEFINED)
 	{
-#ifdef STM32F10X_HYREL
-		pinExtractPortPtr(pin)->BRR = pinExtractPinMask(pin);
-#elif defined(STM32F4XX_HYREL)
 		pinExtractPortPtr(pin)->BSRRH = pinExtractPinMask(pin);
-#endif
 	}
 }
 
@@ -173,11 +132,7 @@ void pinSet(pinType pin)
 
 	if (pin != PIN_UNDEFINED)
 	{
-#ifdef STM32F10X_HYREL
-		pinExtractPortPtr(pin)->BSRR = pinExtractPinMask(pin);
-#elif defined(STM32F4XX_HYREL)
 		pinExtractPortPtr(pin)->BSRRL = pinExtractPinMask(pin);
-#endif
 	}
 }
 
@@ -216,7 +171,7 @@ uint32_t pinReadOutput(pinType pin)
 
 	if (pin == PIN_UNDEFINED) return(0);
 
-	return((byte)(pinExtractPortPtr(pin)->ODR >> pinExtractPinNum(pin)) & 0x1);
+	return(uint32_t)((byte)(pinExtractPortPtr(pin)->ODR >> pinExtractPinNum(pin)) & 0x1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
