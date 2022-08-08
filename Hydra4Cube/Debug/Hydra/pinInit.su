@@ -1,0 +1,2 @@
+../Hydra/pinInit.c:11:6:pinInitAll	8	static
+../Hydra/pinInit.c:92:9:isSpecialBuildMachine	4	static

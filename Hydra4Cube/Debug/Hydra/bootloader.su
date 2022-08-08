@@ -1,0 +1,11 @@
+../Hydra/bootloader.c:34:6:sendHexLineError	24	static
+../Hydra/bootloader.c:42:12:intelHexDecomposeLine	24	static
+../Hydra/bootloader.c:116:6:clearWorkingBufferForBootloader	16	static
+../Hydra/bootloader.c:131:6:clearDeviceCodePages	32	static
+../Hydra/bootloader.c:173:12:verifyDeviceCodeChecksum	16	static
+../Hydra/bootloader.c:213:6:setDeviceCodeChecksum	40	static
+../Hydra/bootloader.c:274:6:transferBootloaderDataFromWorkingBufferToDevice	40	static
+../Hydra/bootloader.c:333:12:sendDeviceBootloaderPage	24	static
+../Hydra/bootloader.c:350:6:prepareDeviceForBootloaderDownload	24	static
+../Hydra/bootloader.c:377:6:endDeviceBootloader	8	static
+../Hydra/bootloader.c:388:6:processDeviceBootloaderLine	32	static

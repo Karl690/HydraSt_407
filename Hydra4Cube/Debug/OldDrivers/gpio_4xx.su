@@ -1,0 +1,2 @@
+../OldDrivers/gpio_4xx.c:11:6:HYREL_GPIO_Init	32	static
+../OldDrivers/gpio_4xx.c:60:6:HYREL_GPIO_PinAFConfig	24	static

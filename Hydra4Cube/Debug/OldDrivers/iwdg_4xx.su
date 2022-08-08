@@ -1,0 +1,6 @@
+../OldDrivers/iwdg_4xx.c:130:6:IWDG_WriteAccessCmd	16	static
+../OldDrivers/iwdg_4xx.c:150:6:IWDG_SetPrescaler	16	static
+../OldDrivers/iwdg_4xx.c:163:6:IWDG_SetReload	16	static
+../OldDrivers/iwdg_4xx.c:176:6:IWDG_ReloadCounter	4	static
+../OldDrivers/iwdg_4xx.c:202:6:IWDG_Enable	4	static
+../OldDrivers/iwdg_4xx.c:231:12:IWDG_GetFlagStatus	24	static

@@ -2075,28 +2075,21 @@ void initAllHss(void)
 	}
 
 	// set specific functions to pin mapping for a given architecture
-#ifdef USE_HYREL_IO
-	hssFuncToPinIndex[SPINDLE_COOLANT_HSS] = W_HSS2_INDEX;
-	hssFuncToPinIndex[FLOOD_COOLANT_HSS]   = W_HSS1_INDEX;
-	hssFuncToPinIndex[DANGER_LIGHT_HSS]    = X_HSS2_INDEX;
-	hssFuncToPinIndex[DDLIGHT_HSS]         = Y_HSS1_INDEX;
-	hssFuncToPinIndex[RESPONSE_HSS]        = X_HSS1_INDEX;
-	hssFuncToPinIndex[BUZZER_HSS]          = Z_HSS1_INDEX;
-	hssFuncToPinIndex[ULTIMUS_HSS]         = W_HSS2_INDEX; // redundant with SPINDLE_COOLANT
-#elif defined (USE_HYDRA_IO)
-	hssFuncToPinIndex[SPINDLE_COOLANT_HSS] = HSS_AUX_PWR1_INDEX;
-	hssFuncToPinIndex[FLOOD_COOLANT_HSS]   = HSS_AUX_PWR2_INDEX;
-#ifdef NEW_CO2_LASER_CONTROL_MODULE // no 103 board at power supply; co2 laser lens used for soapstring, etc
-	hssFuncToPinIndex[CO2_POWER_SUPPY_HSS] = HSS_AUX_PWR4_INDEX;
-#endif //NEW_CO2_LASER_CONTROL_MODULE
+
+	hssFuncToPinIndex[SPINDLE_COOLANT_HSS] = HSS_AUX_PWR2_INDEX;
+	hssFuncToPinIndex[FLOOD_COOLANT_HSS]   = HSS_AUX_PWR1_INDEX;
+	//hssFuncToPinIndex[DANGER_LIGHT_HSS]    = X_HSS2_INDEX;
 	hssFuncToPinIndex[DDLIGHT_HSS]         = HSS_AUX_PWR5_INDEX;
 	hssFuncToPinIndex[RESPONSE_HSS]        = HSS_AUX_PWR6_INDEX;
+	//hssFuncToPinIndex[BUZZER_HSS]          = HSS_AUX_PWR3_INDEX;
+
 	hssFuncToPinIndex[CHAMBER_FAN_HSS]     = HSS_AUX_PWR7_INDEX;
 	hssFuncToPinIndex[LASER_XHAIR_HSS]     = HSS_AUX_PWR9_INDEX;
 	hssFuncToPinIndex[VACUUM_HSS]          = DRAIN1_INDEX;
 	hssFuncToPinIndex[AIR_ASSIST_HSS]      = DRAIN2_INDEX;
 	hssFuncToPinIndex[ULTIMUS_HSS]         = HSS_AUX_PWR1_INDEX; // redundant with SPINDLE_COOLANT
-#endif
+
+
 
 	changeHssDuty(&HighSideSwitches[hssFuncToPinIndex[DDLIGHT_HSS]], HSS_DUTY_CYCLE_ON); // turn on DDL Light by default
 }
@@ -6153,15 +6146,12 @@ int main(void)
 
 	InitAllUARTS(SYSTEM_BAUD_RATE);
 
-#ifdef ALLOW_NATIVE_LIGHTBURN
-	if (_lightburnModeEnabled == FALSE)
-#endif //ALLOW_NATIVE_LIGHTBURN
-		USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+	USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 
 	CAN_Config(CAN1);
-#ifdef USE_CAN2
+
 	CAN_Config(CAN2);
-#endif
+
 	InitializeFixtureOffsets();
 
 	ResetProcess(0);

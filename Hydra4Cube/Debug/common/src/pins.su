@@ -1,0 +1,8 @@
+../common/src/pins.c:53:21:pinExtractPortPtr	16	static
+../common/src/pins.c:79:6:pinInit	24	static
+../common/src/pins.c:120:6:pinClear	24	static
+../common/src/pins.c:132:6:pinSet	24	static
+../common/src/pins.c:144:6:pinWrite	16	static
+../common/src/pins.c:158:10:pinRead	16	static
+../common/src/pins.c:170:10:pinReadOutput	16	static
+../common/src/pins.c:182:6:pinToggleOutput	16	static

@@ -1,0 +1,14 @@
+../Hydra/headSetup.c:215:16:getDeviceInitPtr	24	static
+../Hydra/headSetup.c:231:7:deviceTypeToString	24	static
+../Hydra/headSetup.c:247:9:deviceTypeIsADiodeLaser	16	static
+../Hydra/headSetup.c:254:9:deviceTypeIsACO2Laser	16	static
+../Hydra/headSetup.c:261:10:devType2DevFamily	24	static
+../Hydra/headSetup.c:277:7:deviceSubtypeToString	24	static
+../Hydra/headSetup.c:374:7:devicePcbToString	24	static
+../Hydra/headSetup.c:389:7:deviceRtdToString	24	static
+../Hydra/headSetup.c:405:7:softwareCodebaseToString	24	static
+../Hydra/headSetup.c:422:7:softwareCompileTargetToStringOLD	24	static
+../Hydra/headSetup.c:438:7:softwareCompileTargetToString	24	static
+../Hydra/headSetup.c:454:6:initSendSwitchFlagsAndMask	40	static
+../Hydra/headSetup.c:554:6:initSendDefaultSwitchParams	32	static
+../Hydra/headSetup.c:584:6:initDeviceFromDeviceTypeInitTable	32	static

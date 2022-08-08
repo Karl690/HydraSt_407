@@ -49,7 +49,7 @@ void pinInitAll(void)
 
 	HEARTBEAT_PIN = HEARTBEAT;
 	pinInit(HEARTBEAT_PIN);
-
+	pinInit(CAN_TX_LED);
 //	pinInit(DRAWBAR);
 //	pinInit(HIGHLOWSPEED);
 //	pinInit(SPINDLECOOLANT);

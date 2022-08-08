@@ -1,0 +1,5 @@
+../OldDrivers/misc_4xx.c:113:6:NVIC_PriorityGroupConfig	16	static
+../OldDrivers/misc_4xx.c:131:6:NVIC_Init	24	static
+../OldDrivers/misc_4xx.c:208:6:NVIC_SetVectorTable	16	static
+../OldDrivers/misc_4xx.c:227:6:NVIC_SystemLPConfig	16	static
+../OldDrivers/misc_4xx.c:251:6:SysTick_CLKSourceConfig	16	static

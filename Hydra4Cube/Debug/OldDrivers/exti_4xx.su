@@ -1,0 +1,8 @@
+../OldDrivers/exti_4xx.c:104:6:EXTI_DeInit	4	static
+../OldDrivers/exti_4xx.c:120:6:EXTI_Init	24	static
+../OldDrivers/exti_4xx.c:176:6:EXTI_StructInit	16	static
+../OldDrivers/exti_4xx.c:191:6:EXTI_GenerateSWInterrupt	16	static
+../OldDrivers/exti_4xx.c:221:12:EXTI_GetFlagStatus	24	static
+../OldDrivers/exti_4xx.c:244:6:EXTI_ClearFlag	16	static
+../OldDrivers/exti_4xx.c:258:10:EXTI_GetITStatus	24	static
+../OldDrivers/exti_4xx.c:283:6:EXTI_ClearITPendingBit	16	static

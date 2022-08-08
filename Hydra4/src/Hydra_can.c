@@ -1468,7 +1468,7 @@ byte canProcessRxQueue(void)
 			}
 			break;
 			case CAN_MSG_REPORT_ERROR:      // hothead or hotbed reporting an error condition
-				printDeviceErrorMessage(canRx);
+				// karlChris printDeviceErrorMessage(canRx);
 				break;
 			case CAN_MSG_LOOPBACK :
 				//this appears to be fired at the END of a block transfer

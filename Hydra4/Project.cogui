@@ -39,21 +39,24 @@
 <part id="21"/>
 <part id="22"/>
 <part id="23"/>
+<part id="24"/>
+<part id="25"/>
+<part id="26"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="D:/HYREL/GIT/HydraSt_407/Hydra4/inc/main.h" title="main.h" tooltip="D:/HYREL/GIT/HydraSt_407/Hydra4/inc/main.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/main.h" title="main.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/main.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/main.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="68840" selectionTopPixel="21672"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="65638" selectionTopPixel="23154"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MotorDrivers.c" partName="MotorDrivers.c" path="C:/2015_Hyrel_Projects/Hydra4/src/MotorDrivers.c" title="MotorDrivers.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/MotorDrivers.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MotorDrivers.c" partName="MotorDrivers.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/MotorDrivers.c" title="MotorDrivers.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/MotorDrivers.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/MotorDrivers.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="171468" selectionTopPixel="86280"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="20020" selectionTopPixel="13270"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="pinout.h" partName="pinout.h" path="C:/Users/karl6/Documents/GitHub/Hydra4/inc/pinout.h" title="pinout.h" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/inc/pinout.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="pinout.h" partName="pinout.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/pinout.h" title="pinout.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/pinout.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/pinout.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="28251" selectionTopPixel="11760"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="25008" selectionTopPixel="11968"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="HardwareInit.c" partName="HardwareInit.c" path="C:/2015_Hyrel_Projects/Hydra4/src/HardwareInit.c" title="HardwareInit.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/HardwareInit.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/HardwareInit.c"/>
@@ -67,37 +70,37 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/lcd/lcd.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="15" selectionOffset="16636" selectionTopPixel="8460"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MCode.c" partName="MCode.c" path="C:/Users/karl6/Documents/GitHub/Hydra4/src/MCode.c" title="MCode.c" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/src/MCode.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MCode.c" partName="MCode.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/MCode.c" title="MCode.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/MCode.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/MCode.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="172417" selectionTopPixel="100972"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="30491" selectionTopPixel="21988"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/karl6/Documents/GitHub/Hydra4/main.c" title="main.c" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/main.c" title="main.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="268621" selectionTopPixel="147416"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="242243" selectionTopPixel="152234"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" partName="hyrel.h" path="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel.h" title="hyrel.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" partName="hyrel.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/inc/hyrel.h" title="hyrel.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/inc/hyrel.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/inc/hyrel.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="17804" selectionTopPixel="10442"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="43015" selectionTopPixel="26452"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="headSetup.c" partName="headSetup.c" path="C:/2015_Hyrel_Projects/Hydra4/src/headSetup.c" title="headSetup.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/headSetup.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="headSetup.c" partName="headSetup.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/headSetup.c" title="headSetup.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/headSetup.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/headSetup.c"/>
-<editorState selectionHorizontalPixel="802" selectionLength="0" selectionOffset="5838" selectionTopPixel="720"/>
+<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="34693" selectionTopPixel="17276"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MotorDriver.h" partName="MotorDriver.h" path="C:/2015_Hyrel_Projects/Hydra4/inc/MotorDriver.h" title="MotorDriver.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/inc/MotorDriver.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="MotorDriver.h" partName="MotorDriver.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/MotorDriver.h" title="MotorDriver.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/MotorDriver.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/MotorDriver.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2978" selectionTopPixel="1740"/>
+<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="2977" selectionTopPixel="4165"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GCode.c" partName="GCode.c" path="C:/2015_Hyrel_Projects/Hydra4/src/GCode.c" title="GCode.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/GCode.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GCode.c" partName="GCode.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/GCode.c" title="GCode.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/GCode.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/GCode.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="63391" selectionTopPixel="33264"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="111444" selectionTopPixel="75394"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="mailbox.c" partName="mailbox.c" path="C:/Users/karl6/Documents/GitHub/Hydra4/src/mailbox.c" title="mailbox.c" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/src/mailbox.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="mailbox.c" partName="mailbox.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/mailbox.c" title="mailbox.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/mailbox.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/mailbox.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="68253" selectionTopPixel="38180"/>
+<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="79458" selectionTopPixel="55832"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Hydra_can.c" partName="Hydra_can.c" path="C:/2015_Hyrel_Projects/Hydra4/src/Hydra_can.c" title="Hydra_can.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/Hydra_can.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Hydra_can.c" partName="Hydra_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" title="Hydra_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/Hydra_can.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="16425" selectionTopPixel="8990"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="57200" selectionTopPixel="40846"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="headSetup.h" partName="headSetup.h" path="C:/2015_Hyrel_Projects/Hydra4/inc/headSetup.h" title="headSetup.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/inc/headSetup.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/headSetup.h"/>
@@ -111,19 +114,19 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/cruftyCode.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="3126" selectionTopPixel="1732"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.c" partName="hyrel_can.c" path="C:/2015_Hyrel_Projects/Hydra4/common/src/hyrel_can.c" title="hyrel_can.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/common/src/hyrel_can.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.c" partName="hyrel_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" title="hyrel_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/src/hyrel_can.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="37494" selectionTopPixel="24438"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="1126" selectionTopPixel="588"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.h" partName="hyrel_can.h" path="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel_can.h" title="hyrel_can.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel_can.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/inc/hyrel_can.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="7566" selectionTopPixel="2948"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Serial.c" partName="Serial.c" path="C:/2015_Hyrel_Projects/Hydra4/src/Serial.c" title="Serial.c" tooltip="C:/2015_Hyrel_Projects/Hydra4/src/Serial.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Serial.c" partName="Serial.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Serial.c" title="Serial.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Serial.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/Serial.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="35214" selectionTopPixel="23166"/>
+<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="35214" selectionTopPixel="29506"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Serial.h" partName="Serial.h" path="C:/2015_Hyrel_Projects/Hydra4/inc/Serial.h" title="Serial.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/inc/Serial.h" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Serial.h" partName="Serial.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/Serial.h" title="Serial.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/Serial.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/Serial.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="1367" selectionTopPixel="330"/>
 </editor>
@@ -138,6 +141,18 @@
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" partName="startup_stm32f4xx.c" path="C:/Users/karl6/Documents/GitHub/Hydra4/cmsis_boot/startup/startup_stm32f4xx.c" title="startup_stm32f4xx.c" tooltip="C:/Users/karl6/Documents/GitHub/Hydra4/cmsis_boot/startup/startup_stm32f4xx.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/cmsis_boot/startup/startup_stm32f4xx.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="12958" selectionTopPixel="5352"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="display.c" partName="display.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/display.c" title="display.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/display.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/display.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="268" selectionTopPixel="0"/>
+</editor>
+<editor id="org.coocox.builder.ui.editors.ConfigEditor" name="" partName="Configuration" title="Configuration" tooltip="" workbook="DefaultEditorWorkbook">
+<input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="1" verticalPosition="0"/>
+</input>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GCode.h" partName="GCode.h" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/GCode.h" title="GCode.h" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/inc/GCode.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/GCode.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="1951" selectionTopPixel="1148"/>
 </editor>
 </editors>
 <views>
@@ -183,7 +198,7 @@
 <viewState/>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="31">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="33">
 <expanded>
 <element path="/Project"/>
 <element path="/Project/common"/>
@@ -193,7 +208,7 @@
 <element path="/Project/src"/>
 </expanded>
 <selection>
-<element path="/Project/main.c"/>
+<element path="/Project/src/Hydra_can.c"/>
 </selection>
 </viewState>
 </view>
@@ -204,7 +219,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.coocox.builder.ui.views.ProjectView" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -256,7 +271,7 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@18b26eb" ratio="0.71217996" ratioLeft="918" ratioRight="371" relationship="4" relative="org.eclipse.ui.internal.ViewStack@a3f4e6">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@18b26eb" ratio="0.6353763" ratioLeft="819" ratioRight="470" relationship="4" relative="org.eclipse.ui.internal.ViewStack@a3f4e6">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
@@ -409,173 +424,168 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/MCode.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/Hydra_can.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/MCode.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/pinout.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/Serial.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/Serial.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/MotorDrivers.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/common/src/hyrel_can.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/MCode.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/pinInit.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/pinout.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/GCode.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/main.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/cmsis_boot/startup/startup_stm32f4xx.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/mailbox.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/MotorDriver.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/main.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/GCode.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/Hydra_can.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="259018" y="3"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="81856" y="12"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="259099" y="3"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="8659" y="12"/>
 </item>
-<item historyLabel="MCode.c" index="1">
-<position info="not_deleted" x="86894" y="32"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="36199" y="12"/>
 </item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="259099" y="3"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="8659" y="12"/>
 </item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="31993" y="14"/>
+<item historyLabel="main.h" index="1">
+<position info="not_deleted" x="96931" y="12"/>
 </item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="167983" y="14"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="8659" y="12"/>
 </item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="200959" y="14"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="24657" y="12"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="10287" y="0"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="36199" y="12"/>
 </item>
-<item historyLabel="MCode.c" index="4">
-<position info="not_deleted" x="282281" y="0"/>
+<item historyLabel="pinout.h" index="2">
+<position info="not_deleted" x="25008" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="200983" y="17"/>
+<item historyLabel="MCode.c" index="0">
+<position info="not_deleted" x="149593" y="12"/>
 </item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="146277" y="17"/>
+<item historyLabel="main.h" index="1">
+<position info="not_deleted" x="97161" y="12"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="2428" y="17"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="8347" y="0"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="2481" y="0"/>
+<item historyLabel="MCode.c" index="0">
+<position info="not_deleted" x="30491" y="19"/>
 </item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="34810" y="9"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="82472" y="19"/>
 </item>
-<item historyLabel="Serial.h" index="7">
+<item historyLabel="Serial.c" index="4">
+<position info="not_deleted" x="35214" y="26"/>
+</item>
+<item historyLabel="Serial.h" index="5">
 <position info="not_deleted" x="1367" y="10"/>
 </item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="35214" y="26"/>
+<item historyLabel="Serial.h" index="5">
+<position info="not_deleted" x="1367" y="10"/>
 </item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="149178" y="26"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="207868" y="26"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="5424" y="26"/>
-</item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="35214" y="26"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="149175" y="0"/>
-</item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="35045" y="10"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="52998" y="10"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="53675" y="10"/>
-</item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="52998" y="10"/>
-</item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="35045" y="10"/>
-</item>
-<item historyLabel="Serial.c" index="6">
+<item historyLabel="Serial.c" index="4">
 <position info="not_deleted" x="39314" y="10"/>
 </item>
-<item historyLabel="Serial.c" index="6">
+<item historyLabel="Serial.c" index="4">
 <position info="not_deleted" x="40562" y="10"/>
 </item>
-<item historyLabel="Serial.c" index="6">
-<position info="not_deleted" x="39314" y="10"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="52998" y="10"/>
 </item>
-<item historyLabel="Serial.c" index="6">
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="53675" y="10"/>
+</item>
+<item historyLabel="Serial.c" index="4">
 <position info="not_deleted" x="35214" y="26"/>
 </item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="149178" y="26"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="5424" y="26"/>
 </item>
-<item historyLabel="main.c" index="5">
-<position info="not_deleted" x="207973" y="27"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="148606" y="26"/>
 </item>
-<item historyLabel="MotorDrivers.c" index="8">
-<position info="not_deleted" x="171468" y="16"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="207177" y="26"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="17793" y="16"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="207296" y="26"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="18060" y="30"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111293" y="27"/>
 </item>
-<item historyLabel="Hydra_can.c" index="3">
-<position info="not_deleted" x="16425" y="0"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111065" y="12"/>
 </item>
-<item historyLabel="MCode.c" index="4">
-<position info="not_deleted" x="18319" y="28"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="114664" y="12"/>
 </item>
-<item historyLabel="hyrel_can.c" index="9">
-<position info="not_deleted" x="21968" y="0"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111444" y="24"/>
 </item>
-<item historyLabel="hyrel_can.c" index="9">
-<position info="not_deleted" x="37494" y="8"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="241015" y="24"/>
 </item>
-<item historyLabel="MCode.c" index="10">
-<position info="not_deleted" x="294962" y="8"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="250028" y="24"/>
 </item>
-<item historyLabel="pinInit.c" index="11">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111444" y="24"/>
 </item>
-<item historyLabel="pinout.h" index="12">
-<position info="not_deleted" x="1285" y="0"/>
+<item historyLabel="main.h" index="7">
+<position info="not_deleted" x="97161" y="12"/>
 </item>
-<item historyLabel="main.h" index="13">
-<position info="not_deleted" x="65706" y="0"/>
+<item historyLabel="main.h" index="7">
+<position info="not_deleted" x="107554" y="24"/>
 </item>
-<item historyLabel="pinout.h" index="12">
-<position info="not_deleted" x="25329" y="0"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111444" y="24"/>
 </item>
-<item historyLabel="pinInit.c" index="11">
-<position info="not_deleted" x="949" y="108"/>
+<item historyLabel="GCode.c" index="6">
+<position info="not_deleted" x="111444" y="24"/>
 </item>
-<item historyLabel="pinout.h" index="12">
-<position info="not_deleted" x="28251" y="4"/>
+<item historyLabel="main.h" index="7">
+<position info="not_deleted" x="107511" y="32"/>
 </item>
-<item historyLabel="startup_stm32f4xx.c" index="14">
-<position info="not_deleted" x="12958" y="4"/>
+<item historyLabel="main.c" index="3">
+<position info="not_deleted" x="241242" y="32"/>
 </item>
-<item historyLabel="mailbox.c" index="15">
-<position info="not_deleted" x="68253" y="0"/>
+<item historyLabel="MotorDriver.h" index="8">
+<position info="not_deleted" x="2977" y="2"/>
 </item>
-<item historyLabel="main.c" index="16">
-<position info="not_deleted" x="268621" y="8"/>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="107511" y="32"/>
 </item>
-<item active="true" historyLabel="main.h" index="13">
-<position info="not_deleted" x="68698" y="8"/>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="98481" y="14"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="98466" y="14"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="98466" y="14"/>
+</item>
+<item historyLabel="GCode.h" index="10">
+<position info="not_deleted" x="1951" y="14"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="98466" y="14"/>
+</item>
+<item historyLabel="main.h" index="9">
+<position info="not_deleted" x="100520" y="10"/>
+</item>
+<item historyLabel="Hydra_can.c" index="11">
+<position info="not_deleted" x="40204" y="27"/>
+</item>
+<item historyLabel="Hydra_can.c" index="11">
+<position info="not_deleted" x="40872" y="23"/>
+</item>
+<item active="true" historyLabel="Hydra_can.c" index="11">
+<position info="not_deleted" x="57200" y="23"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -584,50 +594,50 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_can.h" tooltip="Project/cmsis_lib/inc/stm32f4xx_can.h">
-<persistable path="/Project/cmsis_lib/inc/stm32f4xx_can.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sin.h" tooltip="Project/inc/sin.h">
+<persistable path="/Project/inc/sin.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Project/cmsis_boot/stm32f4xx.h">
-<persistable path="/Project/cmsis_boot/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pins.h" tooltip="Project/common/inc/pins.h">
+<persistable path="/Project/common/inc/pins.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.c" tooltip="Project/cmsis_lib/src/stm32f4xx_gpio.c">
-<persistable path="/Project/cmsis_lib/src/stm32f4xx_gpio.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="Project/cmsis_boot/cmsis_boot103/stm32f10x.h">
+<persistable path="/Project/cmsis_boot/cmsis_boot103/stm32f10x.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="gpio.h" tooltip="Project/inc/gpio.h">
-<persistable path="/Project/inc/gpio.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_tim.h" tooltip="Project/cmsis_lib/cmsis_lib103/inc/stm32f10x_tim.h">
+<persistable path="/Project/cmsis_lib/cmsis_lib103/inc/stm32f10x_tim.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="bootloader.c" tooltip="Project/src/bootloader.c">
-<persistable path="/Project/src/bootloader.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="Project/cmsis_boot/cmsis_boot103/startup/startup_stm32f10x_md.c">
+<persistable path="/Project/cmsis_boot/cmsis_boot103/startup/startup_stm32f10x_md.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="HardwareInit.h" tooltip="Project/inc/HardwareInit.h">
-<persistable path="/Project/inc/HardwareInit.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f10x.c" tooltip="Project/cmsis_boot/cmsis_boot103/system_stm32f10x.c">
+<persistable path="/Project/cmsis_boot/cmsis_boot103/system_stm32f10x.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_core.c" tooltip="Project/usb_lib/src/usb_core.c">
-<persistable path="/Project/usb_lib/src/usb_core.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="core_cm3.c" tooltip="Project/cmsis/cmsis103/core_cm3.c">
+<persistable path="/Project/cmsis/cmsis103/core_cm3.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb_dcd.c" tooltip="Project/usb_lib/src/usb_dcd.c">
-<persistable path="/Project/usb_lib/src/usb_dcd.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pins_stm32f10x.h" tooltip="Project/common/inc/pins_stm32f10x.h">
+<persistable path="/Project/common/inc/pins_stm32f10x.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_usr.c" tooltip="Project/usb_lib/src/usbd_usr.c">
-<persistable path="/Project/usb_lib/src/usbd_usr.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_ld.c" tooltip="Project/cmsis_boot/cmsis_boot103/startup/startup_stm32f10x_ld.c">
+<persistable path="/Project/cmsis_boot/cmsis_boot103/startup/startup_stm32f10x_ld.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_req.c" tooltip="Project/usb_lib/src/usbd_req.c">
-<persistable path="/Project/usb_lib/src/usbd_req.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="taskmanager.h" tooltip="Project/inc/taskmanager.h">
+<persistable path="/Project/inc/taskmanager.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usbd_desc.c" tooltip="Project/usb_lib/src/usbd_desc.c">
-<persistable path="/Project/usb_lib/src/usbd_desc.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pinout.h" tooltip="GD32MotorController/pinout.h">
+<persistable path="/GD32MotorController/pinout.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mailbox.h" tooltip="Project/inc/mailbox.h">
-<persistable path="/Project/inc/mailbox.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="GCode.h" tooltip="Project/inc/GCode.h">
+<persistable path="/Project/inc/GCode.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="canbus.c" tooltip="Project/src/canbus.c">
 <persistable path="/Project/src/canbus.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" tooltip="Project/common/inc/hyrel.h">
-<persistable path="/Project/common/inc/hyrel.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="display.c" tooltip="Project/src/display.c">
+<persistable path="/Project/src/display.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel.h" tooltip="Project/common/inc/hyrel.h">
-<persistable path="/Project/common/inc/hyrel.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Project/cmsis_boot/stm32f4xx.h">
+<persistable path="/Project/cmsis_boot/stm32f4xx.h"/>
 </file>
 </mruList>
 </workbench>

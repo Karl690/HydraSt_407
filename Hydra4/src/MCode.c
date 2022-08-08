@@ -7390,8 +7390,8 @@ void M_Code_M787(void)  // calibrate can based closed-loop motor (uses T, P, C, 
 	if ((uint32_t)ARG_P != KARLS_PASSWORD)  {ReportInvalidMcodePArgInt(); return; }   //must have a valid password for this command
 	outboxStruct *localOutboxPtr = ConvertArgTtoHotheadOutboxPtr();
 
-	if (isAPhysicalDevice(localOutboxPtr->device) && deviceHasAClosedLoopStepper(localOutboxPtr->device))
-	{	// no aliases
+//	if (isAPhysicalDevice(localOutboxPtr->device) && deviceHasAClosedLoopStepper(localOutboxPtr->device))
+//	{	// no aliases
 		if (ARG_F_PRESENT && (ARG_F == 1.0f))
 		{
 			canPackIntoTxQueueNoData(CAN_WRITE, localOutboxPtr->device, CAN_MSG_CLOSED_LOOP_MOTOR_CONTROL, CLOSED_LOOP_MOTOR_RESTORE_DEFAULTS, BUFFERED_MSG);
@@ -7400,7 +7400,7 @@ void M_Code_M787(void)  // calibrate can based closed-loop motor (uses T, P, C, 
 		{
 			canPackIntoTxQueueNoData(CAN_WRITE, localOutboxPtr->device, CAN_MSG_CLOSED_LOOP_MOTOR_CONTROL, CLOSED_LOOP_MOTOR_CALIBRATE, BUFFERED_MSG);
 		}
-	}
+//	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

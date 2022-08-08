@@ -840,10 +840,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #define SOFTWARE_MAJOR_REVISION     4   // XXX  update when a major change occurs (ie, protocol)
-#define SOFTWARE_MINOR_REVISION     000 // XXX  update for major and minor changes
-#define SOFTWARE_TWEAK_REVISION    'K'  // XXX  update for small changes ('z' is for experimental ONLY)
+#define SOFTWARE_MINOR_REVISION     500 // XXX  update for major and minor changes
+#define SOFTWARE_TWEAK_REVISION    'D'  // XXX  update for small changes ('z' is for experimental ONLY)
 
-#define SOFTWARE_DEBUG_REVISION    'D'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)
+#define SOFTWARE_DEBUG_REVISION    'A'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)
 
 #if (SOFTWARE_TWEAK_REVISION == 'z')
 #define GB_DEBUGGING
@@ -1686,7 +1686,7 @@ typedef enum  {
 		Z_HSS2_INDEX = 6,
 		W_HSS1_INDEX = 7,
 		W_HSS2_INDEX = 8,
-#elif defined(USE_HYDRA_IO)
+
 		HSS_AUX_PWR1_INDEX = 1,
 		HSS_AUX_PWR2_INDEX = 2,
 		HSS_AUX_PWR4_INDEX = 3,

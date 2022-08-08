@@ -1,0 +1,7 @@
+../OldDrivers/syscfg_4xx.c:101:6:SYSCFG_DeInit	8	static
+../OldDrivers/syscfg_4xx.c:119:6:SYSCFG_MemoryRemapConfig	16	static
+../OldDrivers/syscfg_4xx.c:140:6:SYSCFG_MemorySwappingBank	16	static
+../OldDrivers/syscfg_4xx.c:163:6:SYSCFG_EXTILineConfig	24	static
+../OldDrivers/syscfg_4xx.c:184:6:SYSCFG_ETH_MediaInterfaceConfig	16	static
+../OldDrivers/syscfg_4xx.c:201:6:SYSCFG_CompensationCellCmd	16	static
+../OldDrivers/syscfg_4xx.c:214:12:SYSCFG_GetCompensationCellStatus	16	static
