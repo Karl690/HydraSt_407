@@ -5233,7 +5233,7 @@ boolean  checkMotorSensor(sensorIndex_t sensorIndex)
 						if (M->HomeSense.Enabled)
 						{   // if the Axis has a home sensor, FORCE A REHOMING OF JUST THE FAULTED AXIS
 							M->HasBeenHomed = FALSE;
-							M->HasBeenHomed_BlockedMsgSent = FALSE; // re-arm message in case users tries to move without homing
+							M->HasBeenHomed_BlockedMsgSent = FALSE; // re-arm message in case users tries to move without homing INVALID-NO_KEY_FOUND
 						}
 
 						if (sensorIndex == SENSOR_INDEX_LIMIT1)
@@ -6113,7 +6113,7 @@ int main(void)
 	//  else
 	//  {
 	//      setupIWDG(5.0f);  // enable IWDG timer (needs interrupts for LSI calib)
-	//      pinClear(ERROR_LED);
+	//      pinClear(ERROR_LED); Blocked
 	//  }
 #endif //GB_HIDDEN_WARNINGS
 
@@ -6126,7 +6126,7 @@ int main(void)
 	initMailbox();
 	initKey(FALSE, _sysInfoPtr->lastKeyUsed, &GCodeArgComment[1]);     // must be after initMailbox; 	// tell the key checker where to put and find data
 	InitTimer7();
-	InitTimer3ForDelays();  // for delayMsec; delayuSec; delaySec   delayMs(
+	InitTimer3ForDelays();  // for delayMsec; delayuSec; delaySec   delayMs( missing
 
 	if (ClocksFailedToInitialize)
 	{
@@ -6176,6 +6176,7 @@ int main(void)
 
 	while (1)
 	{
+		//_blockAllMotion=FALSE;
 #ifdef ADD_ON_SPI_DISPLAY
 #if 0 //NUKE
 		if (GUI_GetCurrPage() != GUI_GetNextPage())

@@ -834,14 +834,14 @@
 //		- fixed bug for temperature report for chamber (4.203a revamped the reporting code based on head type to more cleanly support
 //		  several new head types.   chamber temp was inadvertantly divided by 32)
 //////////// RELEASED - 2021/07/07 -------------
-////
+//// key
 //4.203D
 //changed maximum temp for hotbed 100 to 120c
 ////////////////////////////////////////////////////////////////////////////////
 
 #define SOFTWARE_MAJOR_REVISION     4   // XXX  update when a major change occurs (ie, protocol)
-#define SOFTWARE_MINOR_REVISION     500 // XXX  update for major and minor changes
-#define SOFTWARE_TWEAK_REVISION    'D'  // XXX  update for small changes ('z' is for experimental ONLY)
+#define SOFTWARE_MINOR_REVISION     501 // XXX  update for major and minor changes
+#define SOFTWARE_TWEAK_REVISION    'A'  // XXX  update for small changes ('z' is for experimental ONLY)
 
 #define SOFTWARE_DEBUG_REVISION    'A'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)
 

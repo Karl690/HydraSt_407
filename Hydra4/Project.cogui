@@ -96,11 +96,11 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="mailbox.c" partName="mailbox.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/mailbox.c" title="mailbox.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/mailbox.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/mailbox.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="79458" selectionTopPixel="55832"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="13570" selectionTopPixel="6132"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Hydra_can.c" partName="Hydra_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" title="Hydra_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Hydra_can.c" partName="Hydra_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" title="Hydra_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/src/Hydra_can.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/Hydra_can.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="57200" selectionTopPixel="40846"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="59565" selectionTopPixel="42410"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="headSetup.h" partName="headSetup.h" path="C:/2015_Hyrel_Projects/Hydra4/inc/headSetup.h" title="headSetup.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/inc/headSetup.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/inc/headSetup.h"/>
@@ -114,9 +114,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/src/cruftyCode.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="3126" selectionTopPixel="1732"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.c" partName="hyrel_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" title="hyrel_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.c" partName="hyrel_can.c" path="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" title="hyrel_can.c" tooltip="C:/Users/karl6/Documents/GitHub/HydraSt_407/Hydra4/common/src/hyrel_can.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/src/hyrel_can.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="1126" selectionTopPixel="588"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2050" selectionTopPixel="1796"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hyrel_can.h" partName="hyrel_can.h" path="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel_can.h" title="hyrel_can.h" tooltip="C:/2015_Hyrel_Projects/Hydra4/common/inc/hyrel_can.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Project/common/inc/hyrel_can.h"/>
@@ -158,7 +158,6 @@
 <views>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -272,7 +271,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@18b26eb" ratio="0.6353763" ratioLeft="819" ratioRight="470" relationship="4" relative="org.eclipse.ui.internal.ViewStack@a3f4e6">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.cdt.ui.callHierarchy" label="Call Hierarchy"/>
@@ -436,25 +435,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/main.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/inc/GCode.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/Hydra_can.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/src/mailbox.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Project/common/src/hyrel_can.c"/>
 </editors>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="81856" y="12"/>
-</item>
-<item historyLabel="pinout.h" index="2">
-<position info="not_deleted" x="8659" y="12"/>
-</item>
-<item historyLabel="pinout.h" index="2">
-<position info="not_deleted" x="36199" y="12"/>
-</item>
-<item historyLabel="pinout.h" index="2">
-<position info="not_deleted" x="8659" y="12"/>
-</item>
-<item historyLabel="main.h" index="1">
-<position info="not_deleted" x="96931" y="12"/>
-</item>
-<item historyLabel="pinout.h" index="2">
-<position info="not_deleted" x="8659" y="12"/>
-</item>
 <item historyLabel="pinout.h" index="2">
 <position info="not_deleted" x="24657" y="12"/>
 </item>
@@ -584,8 +567,26 @@
 <item historyLabel="Hydra_can.c" index="11">
 <position info="not_deleted" x="40872" y="23"/>
 </item>
-<item active="true" historyLabel="Hydra_can.c" index="11">
+<item historyLabel="Hydra_can.c" index="11">
 <position info="not_deleted" x="57200" y="23"/>
+</item>
+<item historyLabel="Hydra_can.c" index="11">
+<position/>
+</item>
+<item historyLabel="Hydra_can.c" index="11">
+<position/>
+</item>
+<item historyLabel="mailbox.c" index="12">
+<position info="not_deleted" x="79458" y="27"/>
+</item>
+<item historyLabel="mailbox.c" index="12">
+<position info="not_deleted" x="13520" y="24"/>
+</item>
+<item historyLabel="hyrel_can.c" index="13">
+<position info="not_deleted" x="1127" y="5"/>
+</item>
+<item active="true" historyLabel="hyrel_can.c" index="13">
+<position info="not_deleted" x="1992" y="19"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

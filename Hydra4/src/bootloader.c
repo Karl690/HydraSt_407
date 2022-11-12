@@ -46,7 +46,7 @@ passFail_t intelHexDecomposeLine(char *s)
 	if (strchr(s, CMD_END_CHAR))     // replace first line feed char (if any) with NULL char
 		*strchr(s, CMD_END_CHAR) = NULL_CHAR;
 
-	if (strchr(s, CR_CHAR))     // replace first carriage return char (if any) with NULL char
+	if (strchr(s, CR_CHAR))     // replace first carriage return char (if any) with NULL char NO_KEY
 		*strchr(s, CR_CHAR) = NULL_CHAR;
  
 	if (strlen(s) < 11) {
