@@ -3699,7 +3699,14 @@ void M_Code_M260(void)
 void setupPnpValves()
 {
 	if (ARG_V_MISSING)return;
-	PNPSPIData = 1<<(int)ARG_V;//set the bit for the relay
+	int valveNumber=(int)ARG_V;
+	if(valveNumber==0)
+		{
+		PNPSPIData=0;
+		return;
+		}
+	valveNumber--;
+	PNPSPIData = 1<<valveNumber;//set the bit for the relay
 	if (ARG_D_MISSING)
 		{
 		PnPResetTimer=10;
