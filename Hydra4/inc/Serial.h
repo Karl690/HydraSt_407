@@ -211,5 +211,10 @@ extern void transmitEchoChar(void);
 void forceCharToHw(char);
 extern void PrintCheck (void);
 extern void changeMasterCommPort(masterPort_t);
+//spi3
+extern void Init_SPI3(void);
+extern void SendPNPSPIDataToSpi3(uint16_t);
+extern void LatchPnPData();
+
 
 #endif // #ifndef Serial_HEADER // prevent double dipping - MUST BE LAST LINE OF FILE

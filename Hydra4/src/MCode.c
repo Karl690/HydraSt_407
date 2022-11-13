@@ -3696,7 +3696,17 @@ void M_Code_M260(void)
 #endif ////!ADD_ON_SPI_DISPLAY
 
 ////////////////////////////////////////////////////////////////////////////////
-
+void setupPnpValves()
+{
+	if (ARG_V_MISSING)return;
+	PNPSPIData = 1<<(int)ARG_V;//set the bit for the relay
+	if (ARG_D_MISSING)
+		{
+		PnPResetTimer=10;
+		return;
+		}
+	PnPResetTimer=(int)ARG_D;//set custom dwell time
+}
 void setupHssPwm(HssPwmStruct *hss)  // sets the output X HSS PWM dutyCycle (uses S)
 {
 	// MCODE M60X <S PWM(%)> <P period(seconds)>
@@ -3754,7 +3764,7 @@ void M_Code_M609(void) { if (9 < NUM_HSS_PINS) setupHssPwm(&HighSideSwitches[9])
 void M_Code_M610(void) { if (10 < NUM_HSS_PINS) setupHssPwm(&HighSideSwitches[10]); } // MCODE enable HSS out10
 void M_Code_M611(void) { if (11 < NUM_HSS_PINS) setupHssPwm(&HighSideSwitches[11]); } // MCODE enable HSS out11
 void M_Code_M612(void) { if (12 < NUM_HSS_PINS) setupHssPwm(&HighSideSwitches[12]); } // MCODE enable HSS out12
-void M_Code_M613(void) {;} // MCODE reserved
+void M_Code_M613(void) {setupPnpValves();} // set valves
 void M_Code_M614(void) {;} // MCODE reserved
 void M_Code_M615(void) {;} // MCODE reserved
 void M_Code_M616(void) {;} // MCODE reserved

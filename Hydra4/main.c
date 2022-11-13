@@ -70,6 +70,7 @@ boolean StatusReportLineNum=FALSE;
 float _LastReportedCurrentRequestedFeedrateInMmPerSec = -1.0f;
 int _LastReportedExecutingLineNumber = -1;
 
+uint16_t spi3counter =0;
 boolean _printAir=FALSE;
 float _autoReverseAndPrimeMinTime=0.0f;    // single non-E of less than this time between two print moves do not generate unprime/prime pair
 E_control_t _extrusionControl;
@@ -96,7 +97,8 @@ boolean _blockImmediateMoveOnToolChange=FALSE; // Hydra3 default behavior
 
 int dump407SoapstringFlag=0;
 int DDLightFunction=0;
-
+int PNPSPIData=0;
+int PnPResetTimer=0;
 int PrimeTimer=0;//used to keep track of how long since the prime was issued so we can start the motion
 int UnPrimeTimer=0;//used to keep track of how long since the unprime was issued
 int HostConnectionWatchDog=0;//watchdog to prevent lava flow from head when communincation breaks.
@@ -670,8 +672,8 @@ const PFUNC F10HZ[NUM_10HZ] =
 		EdgeTriggerSendResults, // move into simple_work if space needed
 		checkForCompletedAbort,
 		ReportXYZLocation,
-		spare,
-		spare,
+		PnP_SetValves,//updateSPI3,
+		LatchPnPData,//LatchPnPData,//spare,
 		loop_10Hz_simple_work,  // keep as last call in this array
 };
 
@@ -2787,6 +2789,7 @@ void CommandProcessor()
 		case 610: AddCommandToQue(SYNCS_WITH_MOTION);  break;//return;// enable HSS out10
 		case 611: AddCommandToQue(SYNCS_WITH_MOTION);  break;//return;// enable HSS out11
 		case 612: AddCommandToQue(SYNCS_WITH_MOTION);  break;//return;// enable HSS out12
+		case 613: AddCommandToQue(SYNCS_WITH_MOTION);  break;//return;// enable HSS out12
 		case 619: AddCommandToQue(SYNCS_WITH_MOTION);  break;//return;// sets the function and output pwm of the selected HSS (uses F, I, S, P, J, H)
 		case 620: AddCommandToQue(SINGLE_STEP);break;//return;// Laser global control (uses T, E, F, C, P)
 		case 621: AddCommandToQue(SYNCS_WITH_MOTION);break;//return;// Laser vector mode control (uses P)
@@ -4046,6 +4049,7 @@ void processCommand(GMCommandStructure *cmdPtr)
 		case 610: M_Code_M610();  break;//return;// enable HSS out10
 		case 611: M_Code_M611();  break;//return;// enable HSS out11
 		case 612: M_Code_M612();  break;//return;// enable HSS out12
+		case 613: M_Code_M613();  break;//return;// enable HSS out12
 		case 619: M_Code_M619();  break;//return;// sets the function and output pwm of the selected HSS (uses F, I, S, P, J, H)
 		case 620: M_Code_M620();  break;//return;// Laser global control (uses T, E, F, C, P)
 		case 621: M_Code_M621();  break;//return;// Laser vector mode control (uses P)
@@ -4281,6 +4285,7 @@ void ReportXYZLocation(void)
 
 void spare (void)
 {
+
 	// placeholder call for empty slice
 }
 
@@ -4610,6 +4615,23 @@ void loop_10Hz_simple_work(void)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+void PnP_SetValves()
+{
+	//if(	PNPSPIData==0)return;
+	if(PnPResetTimer>0)
+	{//we still have some dwell time left so keep the valve open
+	SendPNPSPIDataToSpi3(PNPSPIData);//update the data word;
+	PnPResetTimer--;
+	return;
+	}
+	PNPSPIData=0;
+	SendPNPSPIDataToSpi3(0);//turn off all valves,we arefinished
+}
+void PnP_TurnOffAllValves()
+{
+	PNPSPIData=0;
+	SendPNPSPIDataToSpi3(PNPSPIData);//update the data word;
+}
 
 void loop_1Hz_simple_work(void)
 {
@@ -4724,7 +4746,11 @@ void requireAllAxesToHome(void)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
+void updateSPI3(void)
+{
+	spi3counter++;
+ 	SendPNPSPIDataToSpi3(spi3counter);
+}
 void outputControlBit(controlBitStruct *outputPtr, assertValue_t value)
 {
 	if (outputPtr->Polarity == ACTIVE_HIGH) // normal
@@ -6090,7 +6116,7 @@ void executeAnySpecialDebugStartCode(void)
 #endif //GB_STARTUP_PIN
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 int main(void)
 {
@@ -6172,8 +6198,10 @@ int main(void)
 
 #ifdef USE_AB_ENCODER
 	timerInitEncoderAB(FALSE);  		// setup for GUI use
-#endif //USE_AB_ENCODER
 
+#endif //USE_AB_ENCODER
+	//Init_SPI3();//pick and place feeder
+	Init_SPI3();//pick and place feeder
 	while (1)
 	{
 		//_blockAllMotion=FALSE;

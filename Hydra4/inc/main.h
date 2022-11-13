@@ -837,11 +837,14 @@
 //// key
 //4.203D
 //changed maximum temp for hotbed 100 to 120c
+//4.501A  this was port from ESR 30m code base to solve dieing in middle of print.
+//4.500D was stable, so we bumped rev to play with the SPI3 valve driver for pnp
+//
 ////////////////////////////////////////////////////////////////////////////////
 
 #define SOFTWARE_MAJOR_REVISION     4   // XXX  update when a major change occurs (ie, protocol)
 #define SOFTWARE_MINOR_REVISION     501 // XXX  update for major and minor changes
-#define SOFTWARE_TWEAK_REVISION    'A'  // XXX  update for small changes ('z' is for experimental ONLY)
+#define SOFTWARE_TWEAK_REVISION    'B'  // XXX  update for small changes ('z' is for experimental ONLY)
 
 #define SOFTWARE_DEBUG_REVISION    'A'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)
 
@@ -2448,6 +2451,8 @@ extern char _bootupAlertHostChar;
 extern boolean _sendBootupAlertHostChar;
 
 extern pinType HEARTBEAT_PIN;
+extern int  PNPSPIData;
+extern int  PnPResetTimer;
 
 ////////////////////////////////////////////////////////////////////////////////
 //  Public Methods available in main
@@ -2482,6 +2487,7 @@ extern sensorState_t readSensorBitState(sensorStruct *);
 extern void setSensorBitState(sensorStruct *sensorPtr, uint32_t value);
 extern boolean sensorEnabledAndTripped(sensorStruct *sensorPtr);
 extern int getNextDeferredCommandIndex(int);
+
 
 extern void initSensor(sensorStruct *, sensorIndex_t, char *, boolean, polarity_t, pinType, int);
 extern void setSensorToUnknownState(sensorStruct *);
@@ -2533,6 +2539,8 @@ extern void sendEmoMessage(void);
 extern void EdgeTriggerSendResults(void);
 extern boolean SetupEXTI(int, probeType_t, EXTITrigger_TypeDef, int);
 extern void DisableEXTI(void);
+extern void updateSPI3();
+extern void PnP_SetValves();
 
 ////////////////////////////////////////////////////////////////////////////////
 

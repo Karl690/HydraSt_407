@@ -81,7 +81,10 @@ void pinInitAll(void)
 
 	pinInit(OTG_FS_DM);
 	pinInit(OTG_FS_DP);
-
+//spi3
+	pinInit(PnP_Enable);
+	pinInit(PnP_Rclk);
+	pinInit(PnP_Clear);
 }
 #endif //USE_HYREL_IO
 

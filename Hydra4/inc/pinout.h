@@ -456,7 +456,18 @@ CO2_LASER_USES HSS4
 #define Z_HOME4             (INPUT_PULLUP     | PIN_PORT_D | PIN_NUM_03)
 #define Z_HOME5             (INPUT_PULLUP     | PIN_PORT_G | PIN_NUM_06)
 
+//Pnp Spi for feeders
+#define PnP_Enable		   (PIN_PORT_A | PIN_NUM_09  | PIN_INIT_LOW  | OUTPUT_PP_50MHZ)
+#define PnP_Enable_Set     GPIOA->BSRRL = 0x0200                 //index to the set bit register
+#define PnP_Enable_Clr     GPIOA->BSRRH = 0x0200  //index to the Clear bit register
 
+#define PnP_Rclk		   (PIN_PORT_C | PIN_NUM_11  | PIN_INIT_LOW  | OUTPUT_PP_50MHZ)
+#define PnP_Rclk_Set       GPIOC->BSRRL = 0x0800                  //index to the set bit register
+#define PnP_Rclk_Clr       GPIOC->BSRRH = 0x0800  //index to the Clear bit register
+
+#define PnP_Clear		   	   (PIN_PORT_D | PIN_NUM_05  | PIN_INIT_HIGH  | OUTPUT_PP_50MHZ)
+#define PnP_Clear_Set        GPIOD->BSRRL = 0x0010                  //index to the set bit register
+#define PnP_Clear_Clr        GPIOD->BSRRH = 0x0010  //index to the Clear bit register
 
 #define START               (INPUT_PULLUP      | PIN_PORT_B | PIN_NUM_00)// (INPUT_PULLUP    | PIN_PORT_F | PIN_NUM_05)
 //#define START           (INPUT_PULLUP      | PIN_PORT_B | PIN_NUM_00)

@@ -38,6 +38,8 @@ extern void releaseUsbBuffer(void);
 // this memory space to circumvent the problem.
 
 masterPort_t masterCommPort;
+//static uint8_t * const DR_Byte = (uint8_t * const)&SPI3->DR;
+static uint16_t * const DR_Word = (uint16_t * const)&SPI3->DR;
 
 char *rawRxBuffer = (char *)SERIAL_RX_RAW_BUFFER_ADDR;
 int  rawRxIndexIn; 			// index of where to store the next char
@@ -1397,4 +1399,46 @@ void changeMasterCommPort(masterPort_t newPort)
 		}
 	}
 }
+///SPI3 library/////////////////////////////////////////////////////////////////////////////
+void Init_SPI3(void)
+{
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOC;	//PORTC clock enable to assign pins c10,12 to spi3
+	// GPIOC pin 10, 12 = alternate function mode
+	GPIOC->MODER &= ~((GPIO_MODER_MODE10_0) | (GPIO_MODER_MODE12_0));
+	GPIOC->MODER |= ((GPIO_MODER_MODE10_1) | (GPIO_MODER_MODE12_1));
+	// alternate mux
+	GPIOC->AFR[1] |= 6<<8 | 6<<16;
 
+	//now spi
+	initClkAndResetAPB1(RCC_APB1Periph_SPI3);
+	// CR1
+		  SPI3->CR1 |= (1<<0)|(1<<1);   // CPOL=1, CPHA=1
+		  SPI3->CR1 |= (1<<2);  // Master Mode
+		  SPI3->CR1 |= (7<<3);  // BR[2:0] = 011: fPCLK/16, PCLK2 = 80MHz, SPI clk = 5MHz
+		  SPI3->CR1 &= ~(1<<7);  // LSBFIRST = 0, MSB first
+		  SPI3->CR1 |= (1<<8) | (1<<9);  // SSM=1, SSi=1 -> Software Slave Management
+		  SPI3->CR1 &= ~(1<<10);  // RXONLY = 1, half-duplex
+		  SPI3->CR1 |= (1<<11);  // DFF=1, 16 bit data
+		  SPI3->CR1 &= 0x4fff;//no crc , xmit mode, unidirecitona
+		  SPI3->CR2 = 0;
+}
+//
+void SendPNPSPIDataToSpi3(uint16_t valueToSend)
+{
+	PnP_Enable_Set;
+	PnP_Rclk_Clr;
+	SPI3->CR1 |= SPI_CR1_SPE;
+	SPI3->CR1 |= 1<<9 ;//SPI_CR1_CSTART;
+
+	//*(volatile uint8_t*)&_handle->dd->DR = val; // Push 1 byte
+	//*(volatile uint16_t*)&SPI3->TXDR = PnPFeederValue; // Push 2 bytes
+		*DR_Word=valueToSend;
+	//*((__IO uint16_t*)&SPI3->TXDR) = PnPFeederValue;
+	//PnPFeederValue++;
+}
+//
+void LatchPnPData()
+{
+	PnP_Rclk_Set;
+}
+//
