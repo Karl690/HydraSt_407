@@ -1403,11 +1403,12 @@ void changeMasterCommPort(masterPort_t newPort)
 void Init_SPI3(void)
 {
 	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOC;	//PORTC clock enable to assign pins c10,12 to spi3
-	// GPIOC pin 10, 12 = alternate function mode
 	GPIOC->MODER &= ~((GPIO_MODER_MODE10_0) | (GPIO_MODER_MODE12_0));
 	GPIOC->MODER |= ((GPIO_MODER_MODE10_1) | (GPIO_MODER_MODE12_1));
 	// alternate mux
-	GPIOC->AFR[1] |= 6<<8 | 6<<16;
+	GPIOC->AFR[1] |= 6<<8;//sset bit 10 as AF6 (note this is High order register, bits 8 thru 15
+	GPIOC->AFR[1] |= 6<<16;//sset bit 12 as AF6 (note this is High order register, bits 8 thru 15
+
 
 	//now spi
 	initClkAndResetAPB1(RCC_APB1Periph_SPI3);
@@ -1421,6 +1422,41 @@ void Init_SPI3(void)
 		  SPI3->CR1 |= (1<<11);  // DFF=1, 16 bit data
 		  SPI3->CR1 &= 0x4fff;//no crc , xmit mode, unidirecitona
 		  SPI3->CR2 = 0;
+}
+
+//spi2 display pins
+//Mosi C1
+//SCK  D3
+//RS   C3
+//Rst  C0
+//CS   B7
+//bklt none
+void Init_SPI2(void)
+{
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOC;	//PORTC clock enable to assign pins C1 to spi2
+	// GPIOC pin 1 alternate function mode MOSI
+	GPIOC->MODER &= ~(GPIO_MODER_MODE1_0);
+	GPIOC->MODER |= (GPIO_MODER_MODE1_1);
+	// alternate mux
+	GPIOC->AFR[0] |= 5<<4;//sset bit 1 as AF5 (note this is Low order register, bits 0 thru 7
+
+	RCC->AHB1ENR |= RCC_AHB1Periph_GPIOD;	//PORTC clock enable to assign pins D3 to spi2
+	GPIOD->MODER &= ~(GPIO_MODER_MODE3_0);
+	GPIOD->MODER |= (GPIO_MODER_MODE3_1);
+	// alternate mux
+	GPIOD->AFR[0] |= 5<<12;//sset bit 1 as AF5 (note this is Low order register, bits 0 thru 7
+	//now spi
+	initClkAndResetAPB1(RCC_APB1Periph_SPI2);
+	// CR1
+		  SPI2->CR1 |= (1<<0)|(1<<1);   // CPOL=1, CPHA=1
+		  SPI2->CR1 |= (1<<2);  // Master Mode
+		  SPI2->CR1 |= (7<<3);  // BR[2:0] = 011: fPCLK/16, PCLK2 = 80MHz, SPI clk = 5MHz
+		  SPI2->CR1 &= ~(1<<7);  // LSBFIRST = 0, MSB first
+		  SPI2->CR1 |= (1<<8) | (1<<9);  // SSM=1, SSi=1 -> Software Slave Management
+		  SPI2->CR1 &= ~(1<<10);  // RXONLY = 1, half-duplex
+		  SPI2->CR1 |= (1<<11);  // DFF=1, 16 bit data
+		  SPI2->CR1 &= 0x4fff;//no crc , xmit mode, unidirecitona
+		  SPI2->CR2 = 0;
 }
 //
 void SendPNPSPIDataToSpi3(uint16_t valueToSend)

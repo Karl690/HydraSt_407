@@ -839,12 +839,13 @@
 //changed maximum temp for hotbed 100 to 120c
 //4.501A  this was port from ESR 30m code base to solve dieing in middle of print.
 //4.500D was stable, so we bumped rev to play with the SPI3 valve driver for pnp
+//4.501c added Init_SPI2()
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 #define SOFTWARE_MAJOR_REVISION     4   // XXX  update when a major change occurs (ie, protocol)
 #define SOFTWARE_MINOR_REVISION     501 // XXX  update for major and minor changes
-#define SOFTWARE_TWEAK_REVISION    'B'  // XXX  update for small changes ('z' is for experimental ONLY)
+#define SOFTWARE_TWEAK_REVISION    'C'  // XXX  update for small changes ('z' is for experimental ONLY)
 
 #define SOFTWARE_DEBUG_REVISION    'A'  // XXX  char update for debug versions  (applies to 'z' versions only  is for experimental ONLY) (display with M115)
 

@@ -253,14 +253,14 @@
     <File name="common/lcd/lcd.c" path="common/lcd/lcd.c" type="1"/>
     <File name="usb_lib/src/usbd_usr.c" path="usb_lib/src/usbd_usr.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_flash.c" path="cmsis_lib/src/stm32f4xx_flash.c" type="1"/>
-    <File name="src" path="" type="2"/>
     <File name="usb_lib/inc/usbd_req.h" path="usb_lib/inc/usbd_req.h" type="1"/>
-    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="src" path="" type="2"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="common/src/util.c" path="common/src/util.c" type="1"/>
-    <File name="inc/Serial.h" path="inc/Serial.h" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_fsmc.h" path="cmsis_lib/inc/stm32f4xx_fsmc.h" type="1"/>
+    <File name="inc/Serial.h" path="inc/Serial.h" type="1"/>
     <File name="src/cruftyCode.c" path="src/cruftyCode.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_syscfg.c" path="cmsis_lib/src/stm32f4xx_syscfg.c" type="1"/>
     <File name="common/lcd" path="" type="2"/>
@@ -274,8 +274,8 @@
     <File name="inc/bootloader.h" path="inc/bootloader.h" type="1"/>
     <File name="common/src/pins.c" path="common/src/pins.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_misc.c" path="cmsis_lib/src/stm32f4xx_misc.c" type="1"/>
-    <File name="inc/display.h" path="inc/display.h" type="1"/>
     <File name="src/Serial.c" path="src/Serial.c" type="1"/>
+    <File name="inc/display.h" path="inc/display.h" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_usart.h" path="cmsis_lib/inc/stm32f4xx_usart.h" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_pwr.c" path="cmsis_lib/src/stm32f4xx_pwr.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_rcc.c" path="cmsis_lib/src/stm32f4xx_rcc.c" type="1"/>
@@ -285,8 +285,8 @@
     <File name="cmsis_lib/src" path="" type="2"/>
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
-    <File name="cmsis_lib/src/stm32f4xx_dma.c" path="cmsis_lib/src/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_can.c" path="cmsis_lib/src/stm32f4xx_can.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_dma.c" path="cmsis_lib/src/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_fsmc.c" path="cmsis_lib/src/stm32f4xx_fsmc.c" type="1"/>
     <File name="common" path="" type="2"/>
     <File name="usb_lib/src/usbd_cdc_vcp.c" path="usb_lib/src/usbd_cdc_vcp.c" type="1"/>
@@ -294,17 +294,17 @@
     <File name="common/lcd/fonts/font24.c" path="common/lcd/fonts/font24.c" type="1"/>
     <File name="inc/gpio.h" path="inc/gpio.h" type="1"/>
     <File name="common/lcd/lcd.h" path="common/lcd/lcd.h" type="1"/>
-    <File name="src/pinInit.c" path="src/pinInit.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="src/pinInit.c" path="src/pinInit.c" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_dac.h" path="cmsis_lib/inc/stm32f4xx_dac.h" type="1"/>
     <File name="usb_lib/inc/usb_regs.h" path="usb_lib/inc/usb_regs.h" type="1"/>
-    <File name="cmsis_lib/src/stm32f4xx_rtc.c" path="cmsis_lib/src/stm32f4xx_rtc.c" type="1"/>
     <File name="cmsis_lib/src/stm32f4xx_it.c" path="cmsis_lib/src/stm32f4xx_it.c" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_rtc.c" path="cmsis_lib/src/stm32f4xx_rtc.c" type="1"/>
     <File name="usb_lib/inc/usbd_usr.h" path="usb_lib/inc/usbd_usr.h" type="1"/>
     <File name="common/lcd/fonts/font12.c" path="common/lcd/fonts/font12.c" type="1"/>
     <File name="cmsis" path="" type="2"/>
-    <File name="usb_lib/src/usb_dcd_int.c" path="usb_lib/src/usb_dcd_int.c" type="1"/>
     <File name="usb_lib/src/usb_bsp.c" path="usb_lib/src/usb_bsp.c" type="1"/>
+    <File name="usb_lib/src/usb_dcd_int.c" path="usb_lib/src/usb_dcd_int.c" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
     <File name="src/headSetup.c" path="src/headSetup.c" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_rcc.h" path="cmsis_lib/inc/stm32f4xx_rcc.h" type="1"/>
@@ -344,8 +344,8 @@
     <File name="common/inc/pins_stm32f10x.h" path="common/inc/pins_stm32f10x.h" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_spi.h" path="cmsis_lib/inc/stm32f4xx_spi.h" type="1"/>
     <File name="usb_lib/inc/usbd_conf.h" path="usb_lib/inc/usbd_conf.h" type="1"/>
-    <File name="cmsis_lib/src/stm32f4xx_dac.c" path="cmsis_lib/src/stm32f4xx_dac.c" type="1"/>
     <File name="common/lcd/hyrel3d_logo_128x128.h" path="common/lcd/hyrel3d_logo_128x128.h" type="1"/>
+    <File name="cmsis_lib/src/stm32f4xx_dac.c" path="cmsis_lib/src/stm32f4xx_dac.c" type="1"/>
     <File name="cmsis_lib/inc/stm32f4xx_gpio.h" path="cmsis_lib/inc/stm32f4xx_gpio.h" type="1"/>
     <File name="common/inc/hyrel.h" path="common/inc/hyrel.h" type="1"/>
     <File name="usb_lib/inc/usb_core.h" path="usb_lib/inc/usb_core.h" type="1"/>
